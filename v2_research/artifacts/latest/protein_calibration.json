@@ -1,0 +1,14 @@
+{
+  "folding_quality": {
+    "bias_correction": -0.1675,
+    "empirical_noise": 0.1518
+  },
+  "glycosylation": {
+    "bias_correction": 3.9,
+    "empirical_noise": 1.3984
+  },
+  "manufacturing": {
+    "bias_correction": 0.0,
+    "empirical_noise": 0.08
+  }
+}

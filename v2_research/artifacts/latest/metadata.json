@@ -1,0 +1,23 @@
+{
+  "version": "v2",
+  "created": "2026-05-07T09:14:10",
+  "n_samples": 804,
+  "n_features": 99,
+  "n_leaky_removed": 18,
+  "n_clusters": 5,
+  "targets_evaluated": [
+    "composite_score",
+    "expression_score_raw",
+    "expression_score_residualized",
+    "expression_score_ranked"
+  ],
+  "expression_score_diagnosis": {
+    "fraction_near_1": 0.8905472636815921,
+    "species_with_variation": [
+      "smoke_nbenthamiana",
+      "nbenthamiana",
+      "tomato",
+      "rice"
+    ]
+  }
+}

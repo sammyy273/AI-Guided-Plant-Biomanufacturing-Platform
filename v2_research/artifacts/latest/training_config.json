@@ -1,0 +1,14 @@
+{
+  "model_type": "RandomForest",
+  "n_estimators": 500,
+  "max_depth": 12,
+  "min_samples_leaf": 5,
+  "max_features": 0.33,
+  "random_state": 42,
+  "target": "composite_score",
+  "feature_selection": "removed species-correlated (r>0.20)",
+  "n_features": 99,
+  "n_train": 644,
+  "n_cal": 160,
+  "conformal_alpha": 0.1
+}

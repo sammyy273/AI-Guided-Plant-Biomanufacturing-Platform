@@ -1,0 +1,92 @@
+{
+  "train_r2": 0.7820132531379992,
+  "cal_r2": 0.47879778718504074,
+  "cal_mae": 0.11615204173491558,
+  "conformal_coverage": 0.90625,
+  "conformal_q_hat": 0.2228071677854332,
+  "feature_importances": [
+    {
+      "feature": "freq_T",
+      "importance": 0.1508234229139892
+    },
+    {
+      "feature": "k2_GG",
+      "importance": 0.06834423621492972
+    },
+    {
+      "feature": "std_mgw",
+      "importance": 0.05343632728456583
+    },
+    {
+      "feature": "k2_TT",
+      "importance": 0.0509420472704539
+    },
+    {
+      "feature": "k3_CGG",
+      "importance": 0.04104922811358097
+    },
+    {
+      "feature": "motif_as1_like",
+      "importance": 0.03305232625737093
+    },
+    {
+      "feature": "tata_distance_from_end",
+      "importance": 0.02818704453129635
+    },
+    {
+      "feature": "freq_C",
+      "importance": 0.02272367486562638
+    },
+    {
+      "feature": "k3_GGC",
+      "importance": 0.020080486485228737
+    },
+    {
+      "feature": "k3_CGA",
+      "importance": 0.019107176051490954
+    },
+    {
+      "feature": "k3_GGG",
+      "importance": 0.017424498855458034
+    },
+    {
+      "feature": "has_tata_proximal",
+      "importance": 0.016100398171632353
+    },
+    {
+      "feature": "gc_gradient",
+      "importance": 0.012424889595665558
+    },
+    {
+      "feature": "k2_CC",
+      "importance": 0.011186277235486238
+    },
+    {
+      "feature": "k3_TTT",
+      "importance": 0.010750243350845866
+    },
+    {
+      "feature": "k2_CA",
+      "importance": 0.010507256763208331
+    },
+    {
+      "feature": "k3_AAT",
+      "importance": 0.00963978296779397
+    },
+    {
+      "feature": "k3_TGA",
+      "importance": 0.009554036196243851
+    },
+    {
+      "feature": "k3_GCA",
+      "importance": 0.009513332249620043
+    },
+    {
+      "feature": "k2_GA",
+      "importance": 0.00917754088736855
+    }
+  ],
+  "shap_analysis": {
+    "shap_ranking": []
+  }
+}

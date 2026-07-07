@@ -1,0 +1,402 @@
+{
+  "version": "v2",
+  "n_features": 99,
+  "features": [
+    {
+      "name": "dinucleotide_repeats_gte3",
+      "index": 0
+    },
+    {
+      "name": "freq_C",
+      "index": 1
+    },
+    {
+      "name": "freq_T",
+      "index": 2
+    },
+    {
+      "name": "gc_first100",
+      "index": 3
+    },
+    {
+      "name": "gc_gradient",
+      "index": 4
+    },
+    {
+      "name": "gc_last100",
+      "index": 5
+    },
+    {
+      "name": "has_tata_proximal",
+      "index": 6
+    },
+    {
+      "name": "k2_AC",
+      "index": 7
+    },
+    {
+      "name": "k2_AG",
+      "index": 8
+    },
+    {
+      "name": "k2_AT",
+      "index": 9
+    },
+    {
+      "name": "k2_CA",
+      "index": 10
+    },
+    {
+      "name": "k2_CC",
+      "index": 11
+    },
+    {
+      "name": "k2_CT",
+      "index": 12
+    },
+    {
+      "name": "k2_GA",
+      "index": 13
+    },
+    {
+      "name": "k2_GG",
+      "index": 14
+    },
+    {
+      "name": "k2_GT",
+      "index": 15
+    },
+    {
+      "name": "k2_TA",
+      "index": 16
+    },
+    {
+      "name": "k2_TC",
+      "index": 17
+    },
+    {
+      "name": "k2_TG",
+      "index": 18
+    },
+    {
+      "name": "k2_TT",
+      "index": 19
+    },
+    {
+      "name": "k3_AAC",
+      "index": 20
+    },
+    {
+      "name": "k3_AAT",
+      "index": 21
+    },
+    {
+      "name": "k3_ACA",
+      "index": 22
+    },
+    {
+      "name": "k3_ACC",
+      "index": 23
+    },
+    {
+      "name": "k3_ACG",
+      "index": 24
+    },
+    {
+      "name": "k3_ACT",
+      "index": 25
+    },
+    {
+      "name": "k3_AGA",
+      "index": 26
+    },
+    {
+      "name": "k3_AGC",
+      "index": 27
+    },
+    {
+      "name": "k3_AGG",
+      "index": 28
+    },
+    {
+      "name": "k3_AGT",
+      "index": 29
+    },
+    {
+      "name": "k3_ATA",
+      "index": 30
+    },
+    {
+      "name": "k3_ATC",
+      "index": 31
+    },
+    {
+      "name": "k3_ATG",
+      "index": 32
+    },
+    {
+      "name": "k3_ATT",
+      "index": 33
+    },
+    {
+      "name": "k3_CAA",
+      "index": 34
+    },
+    {
+      "name": "k3_CAC",
+      "index": 35
+    },
+    {
+      "name": "k3_CAG",
+      "index": 36
+    },
+    {
+      "name": "k3_CAT",
+      "index": 37
+    },
+    {
+      "name": "k3_CCA",
+      "index": 38
+    },
+    {
+      "name": "k3_CCC",
+      "index": 39
+    },
+    {
+      "name": "k3_CCT",
+      "index": 40
+    },
+    {
+      "name": "k3_CGA",
+      "index": 41
+    },
+    {
+      "name": "k3_CGG",
+      "index": 42
+    },
+    {
+      "name": "k3_CGT",
+      "index": 43
+    },
+    {
+      "name": "k3_CTA",
+      "index": 44
+    },
+    {
+      "name": "k3_CTC",
+      "index": 45
+    },
+    {
+      "name": "k3_CTG",
+      "index": 46
+    },
+    {
+      "name": "k3_CTT",
+      "index": 47
+    },
+    {
+      "name": "k3_GAA",
+      "index": 48
+    },
+    {
+      "name": "k3_GAC",
+      "index": 49
+    },
+    {
+      "name": "k3_GAG",
+      "index": 50
+    },
+    {
+      "name": "k3_GAT",
+      "index": 51
+    },
+    {
+      "name": "k3_GCA",
+      "index": 52
+    },
+    {
+      "name": "k3_GCC",
+      "index": 53
+    },
+    {
+      "name": "k3_GCT",
+      "index": 54
+    },
+    {
+      "name": "k3_GGA",
+      "index": 55
+    },
+    {
+      "name": "k3_GGC",
+      "index": 56
+    },
+    {
+      "name": "k3_GGG",
+      "index": 57
+    },
+    {
+      "name": "k3_GGT",
+      "index": 58
+    },
+    {
+      "name": "k3_GTA",
+      "index": 59
+    },
+    {
+      "name": "k3_GTC",
+      "index": 60
+    },
+    {
+      "name": "k3_GTG",
+      "index": 61
+    },
+    {
+      "name": "k3_GTT",
+      "index": 62
+    },
+    {
+      "name": "k3_TAA",
+      "index": 63
+    },
+    {
+      "name": "k3_TAC",
+      "index": 64
+    },
+    {
+      "name": "k3_TAG",
+      "index": 65
+    },
+    {
+      "name": "k3_TAT",
+      "index": 66
+    },
+    {
+      "name": "k3_TCA",
+      "index": 67
+    },
+    {
+      "name": "k3_TCC",
+      "index": 68
+    },
+    {
+      "name": "k3_TCG",
+      "index": 69
+    },
+    {
+      "name": "k3_TCT",
+      "index": 70
+    },
+    {
+      "name": "k3_TGA",
+      "index": 71
+    },
+    {
+      "name": "k3_TGC",
+      "index": 72
+    },
+    {
+      "name": "k3_TGG",
+      "index": 73
+    },
+    {
+      "name": "k3_TGT",
+      "index": 74
+    },
+    {
+      "name": "k3_TTA",
+      "index": 75
+    },
+    {
+      "name": "k3_TTC",
+      "index": 76
+    },
+    {
+      "name": "k3_TTG",
+      "index": 77
+    },
+    {
+      "name": "k3_TTT",
+      "index": 78
+    },
+    {
+      "name": "length",
+      "index": 79
+    },
+    {
+      "name": "log_length",
+      "index": 80
+    },
+    {
+      "name": "max_homopolymer",
+      "index": 81
+    },
+    {
+      "name": "motif_ABRE",
+      "index": 82
+    },
+    {
+      "name": "motif_ARR1_AT",
+      "index": 83
+    },
+    {
+      "name": "motif_CAAT_box",
+      "index": 84
+    },
+    {
+      "name": "motif_DOF_binding",
+      "index": 85
+    },
+    {
+      "name": "motif_GCC_box",
+      "index": 86
+    },
+    {
+      "name": "motif_G_box",
+      "index": 87
+    },
+    {
+      "name": "motif_MYB_binding",
+      "index": 88
+    },
+    {
+      "name": "motif_O2_site",
+      "index": 89
+    },
+    {
+      "name": "motif_RU5_SunST",
+      "index": 90
+    },
+    {
+      "name": "motif_SURE",
+      "index": 91
+    },
+    {
+      "name": "motif_Skn1_like",
+      "index": 92
+    },
+    {
+      "name": "motif_TATA_box",
+      "index": 93
+    },
+    {
+      "name": "motif_W_box",
+      "index": 94
+    },
+    {
+      "name": "motif_as1_like",
+      "index": 95
+    },
+    {
+      "name": "purine_content",
+      "index": 96
+    },
+    {
+      "name": "std_mgw",
+      "index": 97
+    },
+    {
+      "name": "tata_distance_from_end",
+      "index": 98
+    }
+  ]
+}
