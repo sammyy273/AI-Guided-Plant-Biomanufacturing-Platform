@@ -1,0 +1,17 @@
+,2x_CaMV_35S,NbUBI,NbRbcS
+TATA_box,2.0,1.0,0.0
+CAAT_box,1.0,5.0,3.0
+as1_element,7.0,1.0,0.0
+GCN4_motif,0.0,0.0,0.0
+ocs_like,2.0,0.0,0.0
+G_box,0.0,0.0,0.0
+Box_II,0.0,0.0,0.0
+GT1_motif,0.0,0.0,1.0
+I_box,0.0,0.0,0.0
+W_box,0.0,0.0,0.0
+ABRE,0.0,0.0,0.0
+MBS,0.0,0.0,0.0
+ARE,0.0,1.0,0.0
+total_elements,12.0,8.0,4.0
+weighted_score,44.0,13.0,5.0
+gc_pct,46.1,45.9,37.2

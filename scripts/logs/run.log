@@ -1,0 +1,790 @@
+2026-04-06 03:58:57,897 | INFO     | 
+==============================================================
+2026-04-06 03:58:57,897 | INFO     |   PROMOTER DESIGN PIPELINE — FULL RUN
+2026-04-06 03:58:57,898 | INFO     | ==============================================================
+2026-04-06 03:59:00,355 | INFO     | 
+[36m==============================================================
+  STEP 1: Building Reference Promoter Dataset
+==============================================================[0m
+2026-04-06 03:59:00,355 | INFO     | [32m  OK  [0m 2×CaMV 35S: 746 bp | GC 46.1%
+2026-04-06 03:59:00,355 | INFO     |          Source: Jameel et al., Plants 2020, 10(8):1700, Suppl. S1
+2026-04-06 03:59:00,355 | INFO     |          Structure: Yellow(330) + Brown(327) + Red/core(89) = 746 bp
+2026-04-06 03:59:00,355 | INFO     |        
+2026-04-06 03:59:00,355 | INFO     |        Fetching NbACT3 (AY007693) — N. benthamiana actin 3 — constitutive housekeeping
+2026-04-06 03:59:01,960 | INFO     | [33m  WARN[0m NbACT3: No CDS feature found in record. Skipping.
+2026-04-06 03:59:01,961 | INFO     |        Fetching NbUBI (AJ012639) — Nicotiana ubiquitin — constitutive, all tissues
+2026-04-06 03:59:03,556 | INFO     | [32m  OK  [0m NbUBI: 1098 bp | GC 45.9%
+2026-04-06 03:59:03,557 | INFO     |        Fetching NbRbcS (X02591) — Nicotiana RbcS — highest expression in leaf tissue
+2026-04-06 03:59:05,260 | INFO     | [32m  OK  [0m NbRbcS: 505 bp | GC 37.2%
+2026-04-06 03:59:05,260 | INFO     | [32m  OK  [0m Saved 3 reference promoters → data/reference_promoters.fasta
+2026-04-06 03:59:05,260 | INFO     |        
+2026-04-06 03:59:05,261 | INFO     |        Reference promoters collected:
+2026-04-06 03:59:05,261 | INFO     |          2x_CaMV_35S           746 bp   GC: 46.1%
+2026-04-06 03:59:05,261 | INFO     |          NbUBI                1098 bp   GC: 45.9%
+2026-04-06 03:59:05,261 | INFO     |          NbRbcS                505 bp   GC: 37.2%
+2026-04-06 03:59:05,261 | INFO     |        
+2026-04-06 03:59:05,261 | INFO     |        Next: python step2_score_references.py
+2026-04-06 03:59:05,261 | INFO     | 
+[36m==============================================================
+  STEP 2: Scoring Reference Promoters for Cis-Elements
+==============================================================[0m
+2026-04-06 03:59:05,262 | INFO     | [32m  OK  [0m Loaded 3 reference promoters
+2026-04-06 03:59:05,264 | INFO     | [32m  OK  [0m Scored 2x_CaMV_35S: 12 total elements
+2026-04-06 03:59:05,265 | INFO     | [32m  OK  [0m Scored NbUBI: 8 total elements
+2026-04-06 03:59:05,265 | INFO     | [32m  OK  [0m Scored NbRbcS: 4 total elements
+2026-04-06 03:59:05,267 | INFO     |        
+2026-04-06 03:59:05,267 | INFO     |        CIS-ELEMENT PROFILE — REFERENCE PROMOTERS
+2026-04-06 03:59:05,267 | INFO     |        
+2026-04-06 03:59:05,267 | INFO     |          Element                2x_CaMV_35S           NbUBI          NbRbcS
+2026-04-06 03:59:05,267 | INFO     |          ----------------------------------------------------------------
+2026-04-06 03:59:05,268 | INFO     |          TATA_box          [92m             2.0[0m[92m             1.0[0m[91m             0.0[0m
+2026-04-06 03:59:05,268 | INFO     |          CAAT_box          [92m             1.0[0m[92m             5.0[0m[92m             3.0[0m
+2026-04-06 03:59:05,269 | INFO     |          as1_element       [92m             7.0[0m[92m             1.0[0m[90m             0.0[0m
+2026-04-06 03:59:05,269 | INFO     |          GCN4_motif        [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 03:59:05,269 | INFO     |          ocs_like          [92m             2.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 03:59:05,269 | INFO     |          G_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 03:59:05,269 | INFO     |          Box_II            [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 03:59:05,270 | INFO     |          GT1_motif         [90m             0.0[0m[90m             0.0[0m[92m             1.0[0m
+2026-04-06 03:59:05,270 | INFO     |          I_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 03:59:05,270 | INFO     |          W_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 03:59:05,270 | INFO     |          ABRE              [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 03:59:05,270 | INFO     |          MBS               [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 03:59:05,271 | INFO     |          ARE               [90m             0.0[0m[92m             1.0[0m[90m             0.0[0m
+2026-04-06 03:59:05,271 | INFO     |          total_elements    [92m            12.0[0m[92m             8.0[0m[92m             4.0[0m
+2026-04-06 03:59:05,271 | INFO     |          weighted_score    [92m            44.0[0m[92m            13.0[0m[92m             5.0[0m
+2026-04-06 03:59:05,271 | INFO     |          gc_pct            [92m            46.1[0m[92m            45.9[0m[92m            37.2[0m
+2026-04-06 03:59:05,271 | INFO     |          ----------------------------------------------------------------
+2026-04-06 03:59:05,271 | INFO     |          weighted_score         2x_CaMV_35S           NbUBI          NbRbcS
+2026-04-06 03:59:05,271 | INFO     |          ----------------------------------------------------------------
+2026-04-06 03:59:05,271 | INFO     |          (strength)        [92m            44.0[0m
+2026-04-06 03:59:05,271 | INFO     |          (strength)        [92m            13.0[0m
+2026-04-06 03:59:05,271 | INFO     |          (strength)        [92m             5.0[0m
+2026-04-06 03:59:05,276 | INFO     | [32m  OK  [0m Saved → data/reference_element_scores.csv
+2026-04-06 03:59:05,276 | INFO     |        
+2026-04-06 03:59:05,276 | INFO     |        DESIGN TARGET (your synthetic candidates must meet ALL of these):
+2026-04-06 03:59:05,276 | INFO     |          TATA box:        >= 1     [2×35S = 2]  HARD FILTER
+2026-04-06 03:59:05,276 | INFO     |          CAAT box:        >= 1     [2×35S = 1]  HARD FILTER
+2026-04-06 03:59:05,277 | INFO     |          as-1 elements:   >= 7     [2×35S = 7]  PRIMARY (5x weight)
+2026-04-06 03:59:05,277 | INFO     |          GCN4 motif:      >= 0     [2×35S = 0]  PRIMARY (5x weight)
+2026-04-06 03:59:05,277 | INFO     |          ocs-like:        >= 2     [2×35S = 2]  secondary (3x weight)
+2026-04-06 03:59:05,277 | INFO     |          G-box:           >= 0     [2×35S = 0]  soft preference only
+2026-04-06 03:59:05,277 | INFO     |          Total elements:  >= 12     [match or beat 2×35S raw count]
+2026-04-06 03:59:05,277 | INFO     |          Weighted score:  >= 44     [2×35S baseline — higher is better]
+2026-04-06 03:59:05,277 | INFO     |          GC content:      40-60%   [2×35S = 46.1%]
+2026-04-06 03:59:05,277 | INFO     |        
+2026-04-06 03:59:05,277 | INFO     |        ELEMENT WEIGHTS: as-1=5x, GCN4=5x, ocs-like=3x, others=1-2x
+2026-04-06 03:59:05,277 | INFO     |        NOTE: G-box = 0 in 2×CaMV 35S is expected and correct.
+2026-04-06 03:59:05,277 | INFO     |        CaMV 35S transcription is driven by as-1/ocs elements, not G-boxes.
+2026-04-06 03:59:05,277 | INFO     |        Do not discard candidates for lacking a G-box.
+2026-04-06 03:59:05,277 | INFO     |        
+2026-04-06 03:59:05,277 | INFO     |        Next: python step3_generate_candidates.py
+2026-04-06 03:59:05,277 | INFO     | 
+[36m==============================================================
+  STEP 3: Generating Synthetic Promoter Candidates with Evo2
+==============================================================[0m
+2026-04-06 03:59:05,278 | INFO     |        Model:             evo2-40b
+2026-04-06 03:59:05,278 | INFO     |        Variants per seed: 20
+2026-04-06 03:59:05,278 | INFO     |        Generated length:  800 bp
+2026-04-06 03:59:05,278 | INFO     |        Base temperature:  0.7
+2026-04-06 03:59:05,278 | INFO     |        top_k (max 6):     4
+2026-04-06 03:59:05,278 | INFO     |        
+2026-04-06 03:59:05,278 | INFO     | [32m  OK  [0m Seed 1 (35S core):     150 bp
+2026-04-06 03:59:05,278 | INFO     | [32m  OK  [0m Seed 2 (NbUBI):       200 bp
+2026-04-06 03:59:05,280 | INFO     | [32m  OK  [0m Seed 3 (null):         150 bp
+2026-04-06 03:59:05,280 | INFO     |        
+2026-04-06 03:59:05,280 | INFO     |        [1/3] seed_35S_core
+2026-04-06 03:59:05,280 | INFO     |          Seed preview: AACATCGTGGAAAAAGAAGACGTTCCAACCACGTCTTCAAAGCAAGTGGATTGATGTGAT...
+2026-04-06 04:33:20,402 | INFO     | [32m  OK  [0m   20 variants accepted (19 degenerate filtered)
+2026-04-06 04:33:23,403 | INFO     |        
+2026-04-06 04:33:23,403 | INFO     |        [2/3] seed_NbEndogenous
+2026-04-06 04:33:23,403 | INFO     |          Seed preview: ATGGGCCGGACCGGGCCGGCCCAGCAGGTAAAGAGGCGCGCAATAATATTACTGCGCCTC...
+2026-04-06 05:03:55,753 | INFO     | [32m  OK  [0m   20 variants accepted (13 degenerate filtered)
+2026-04-06 05:03:58,754 | INFO     |        
+2026-04-06 05:03:58,754 | INFO     |        [3/3] seed_null_control
+2026-04-06 05:03:58,754 | INFO     |          Seed preview: GTGCAGCGATTGCGTACAGCCTGGGATAACCGTTTAATACTGCTGGTTCAAAGCCGTCAA...
+2026-04-06 05:12:21,039 | INFO     | [33m  WARN[0m API error 502: 
+2026-04-06 05:29:04,807 | INFO     | [32m  OK  [0m   20 variants accepted (9 degenerate filtered)
+2026-04-06 05:29:04,808 | INFO     | [32m  OK  [0m Saved 60 candidates → data/all_candidates.fasta
+2026-04-06 05:29:04,808 | INFO     |        
+2026-04-06 05:29:04,808 | INFO     |        Candidates by seed:
+2026-04-06 05:29:04,809 | INFO     |          seed_35S_core: 20 variants
+2026-04-06 05:29:04,809 | INFO     |          seed_NbEndogenous: 20 variants
+2026-04-06 05:29:04,809 | INFO     |          seed_null_control: 20 variants
+2026-04-06 05:29:04,809 | INFO     |        
+2026-04-06 05:29:04,809 | INFO     |        Next: python step4_filter_and_rank.py
+2026-04-06 05:29:04,809 | INFO     | 
+[36m==============================================================
+  STEP 4: Filtering and Ranking All 60 Candidates
+==============================================================[0m
+2026-04-06 05:29:04,811 | INFO     | [32m  OK  [0m Loaded 60 candidates
+2026-04-06 05:29:04,811 | INFO     |        
+2026-04-06 05:29:04,811 | INFO     |        Running cis-element analysis...
+2026-04-06 05:29:04,831 | INFO     | [32m  OK  [0m Hard filter: 60 → 2 candidates (58 removed: missing TATA/CAAT or GC out of 40–60%)
+2026-04-06 05:29:04,831 | INFO     |        
+2026-04-06 05:29:09,162 | INFO     |        Loading DNABERT-2 (zhihan1996/DNABERT-2-117M)...
+2026-04-06 05:29:09,162 | INFO     |        First run: downloads ~500 MB. This is normal. Please wait.
+2026-04-06 05:29:12,524 | INFO     | [33m  WARN[0m DNABERT-2 failed to load: This modeling file requires the following packages that were not found in your environment: einops. Run `pip install einops`
+2026-04-06 05:29:12,524 | INFO     | [33m  WARN[0m Continuing with cis-element scores only.
+2026-04-06 05:29:12,525 | INFO     | [33m  WARN[0m DNABERT-2 unavailable. Using cis-element score only.
+2026-04-06 05:29:12,525 | INFO     |        
+2026-04-06 05:29:12,526 | INFO     |        Computing novelty and internal diversity...
+2026-04-06 05:29:12,577 | INFO     |        Novelty range: 0.520 – 0.560 (higher = more different from 35S)
+2026-04-06 05:29:12,991 | INFO     |        Internal diversity range: 0.556 – 0.556
+2026-04-06 05:29:12,992 | INFO     |        
+2026-04-06 05:29:12,992 | INFO     |        Computing Pareto front across 3 objectives:
+2026-04-06 05:29:12,992 | INFO     |          [1] strength  = weighted cis-element score
+2026-04-06 05:29:12,992 | INFO     |          [2] novelty   = edit distance from 2×35S
+2026-04-06 05:29:12,992 | INFO     |          [3] diversity = mean edit distance to other candidates
+2026-04-06 06:04:07,974 | INFO     | 
+==============================================================
+2026-04-06 06:04:07,974 | INFO     |   PROMOTER DESIGN PIPELINE — FULL RUN
+2026-04-06 06:04:07,974 | INFO     | ==============================================================
+2026-04-06 06:04:10,121 | INFO     | 
+[36m==============================================================
+  STEP 1: Building Reference Promoter Dataset
+==============================================================[0m
+2026-04-06 06:04:10,122 | INFO     | [32m  OK  [0m 2×CaMV 35S: 746 bp | GC 46.1%
+2026-04-06 06:04:10,122 | INFO     |          Source: Jameel et al., Plants 2020, 10(8):1700, Suppl. S1
+2026-04-06 06:04:10,122 | INFO     |          Structure: Yellow(330) + Brown(327) + Red/core(89) = 746 bp
+2026-04-06 06:04:10,122 | INFO     |        
+2026-04-06 06:04:10,122 | INFO     |        Fetching NbACT3 (AY007693) — N. benthamiana actin 3 — constitutive housekeeping
+2026-04-06 06:04:11,854 | INFO     | [33m  WARN[0m NbACT3: No CDS feature found in record. Skipping.
+2026-04-06 06:04:11,854 | INFO     |        Fetching NbUBI (AJ012639) — Nicotiana ubiquitin — constitutive, all tissues
+2026-04-06 06:04:13,994 | INFO     | [32m  OK  [0m NbUBI: 1098 bp | GC 45.9%
+2026-04-06 06:04:13,995 | INFO     |        Fetching NbRbcS (X02591) — Nicotiana RbcS — highest expression in leaf tissue
+2026-04-06 06:04:15,579 | INFO     | [32m  OK  [0m NbRbcS: 505 bp | GC 37.2%
+2026-04-06 06:04:15,580 | INFO     | [32m  OK  [0m Saved 3 reference promoters → data/reference_promoters.fasta
+2026-04-06 06:04:15,580 | INFO     |        
+2026-04-06 06:04:15,580 | INFO     |        Reference promoters collected:
+2026-04-06 06:04:15,580 | INFO     |          2x_CaMV_35S           746 bp   GC: 46.1%
+2026-04-06 06:04:15,580 | INFO     |          NbUBI                1098 bp   GC: 45.9%
+2026-04-06 06:04:15,581 | INFO     |          NbRbcS                505 bp   GC: 37.2%
+2026-04-06 06:04:15,581 | INFO     |        
+2026-04-06 06:04:15,581 | INFO     |        Next: python step2_score_references.py
+2026-04-06 06:04:15,581 | INFO     | 
+[36m==============================================================
+  STEP 2: Scoring Reference Promoters for Cis-Elements
+==============================================================[0m
+2026-04-06 06:04:15,581 | INFO     | [32m  OK  [0m Loaded 3 reference promoters
+2026-04-06 06:04:15,584 | INFO     | [32m  OK  [0m Scored 2x_CaMV_35S: 12 total elements
+2026-04-06 06:04:15,584 | INFO     | [32m  OK  [0m Scored NbUBI: 8 total elements
+2026-04-06 06:04:15,585 | INFO     | [32m  OK  [0m Scored NbRbcS: 4 total elements
+2026-04-06 06:04:15,586 | INFO     |        
+2026-04-06 06:04:15,586 | INFO     |        CIS-ELEMENT PROFILE — REFERENCE PROMOTERS
+2026-04-06 06:04:15,586 | INFO     |        
+2026-04-06 06:04:15,587 | INFO     |          Element                2x_CaMV_35S           NbUBI          NbRbcS
+2026-04-06 06:04:15,587 | INFO     |          ----------------------------------------------------------------
+2026-04-06 06:04:15,588 | INFO     |          TATA_box          [92m             2.0[0m[92m             1.0[0m[91m             0.0[0m
+2026-04-06 06:04:15,588 | INFO     |          CAAT_box          [92m             1.0[0m[92m             5.0[0m[92m             3.0[0m
+2026-04-06 06:04:15,588 | INFO     |          as1_element       [92m             7.0[0m[92m             1.0[0m[90m             0.0[0m
+2026-04-06 06:04:15,588 | INFO     |          GCN4_motif        [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 06:04:15,589 | INFO     |          ocs_like          [92m             2.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 06:04:15,589 | INFO     |          G_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 06:04:15,589 | INFO     |          Box_II            [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 06:04:15,589 | INFO     |          GT1_motif         [90m             0.0[0m[90m             0.0[0m[92m             1.0[0m
+2026-04-06 06:04:15,589 | INFO     |          I_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 06:04:15,590 | INFO     |          W_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 06:04:15,590 | INFO     |          ABRE              [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 06:04:15,590 | INFO     |          MBS               [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 06:04:15,590 | INFO     |          ARE               [90m             0.0[0m[92m             1.0[0m[90m             0.0[0m
+2026-04-06 06:04:15,590 | INFO     |          total_elements    [92m            12.0[0m[92m             8.0[0m[92m             4.0[0m
+2026-04-06 06:04:15,591 | INFO     |          weighted_score    [92m            44.0[0m[92m            13.0[0m[92m             5.0[0m
+2026-04-06 06:04:15,591 | INFO     |          gc_pct            [92m            46.1[0m[92m            45.9[0m[92m            37.2[0m
+2026-04-06 06:04:15,591 | INFO     |          ----------------------------------------------------------------
+2026-04-06 06:04:15,591 | INFO     |          weighted_score         2x_CaMV_35S           NbUBI          NbRbcS
+2026-04-06 06:04:15,591 | INFO     |          ----------------------------------------------------------------
+2026-04-06 06:04:15,591 | INFO     |          (strength)        [92m            44.0[0m
+2026-04-06 06:04:15,591 | INFO     |          (strength)        [92m            13.0[0m
+2026-04-06 06:04:15,592 | INFO     |          (strength)        [92m             5.0[0m
+2026-04-06 06:04:15,594 | INFO     | [32m  OK  [0m Saved → data/reference_element_scores.csv
+2026-04-06 06:04:15,594 | INFO     |        
+2026-04-06 06:04:15,594 | INFO     |        DESIGN TARGET (your synthetic candidates must meet ALL of these):
+2026-04-06 06:04:15,594 | INFO     |          TATA box:        >= 1     [2×35S = 2]  HARD FILTER
+2026-04-06 06:04:15,595 | INFO     |          CAAT box:        >= 1     [2×35S = 1]  HARD FILTER
+2026-04-06 06:04:15,595 | INFO     |          as-1 elements:   >= 7     [2×35S = 7]  PRIMARY (5x weight)
+2026-04-06 06:04:15,595 | INFO     |          GCN4 motif:      >= 0     [2×35S = 0]  PRIMARY (5x weight)
+2026-04-06 06:04:15,595 | INFO     |          ocs-like:        >= 2     [2×35S = 2]  secondary (3x weight)
+2026-04-06 06:04:15,595 | INFO     |          G-box:           >= 0     [2×35S = 0]  soft preference only
+2026-04-06 06:04:15,595 | INFO     |          Total elements:  >= 12     [match or beat 2×35S raw count]
+2026-04-06 06:04:15,595 | INFO     |          Weighted score:  >= 44     [2×35S baseline — higher is better]
+2026-04-06 06:04:15,595 | INFO     |          GC content:      40-60%   [2×35S = 46.1%]
+2026-04-06 06:04:15,595 | INFO     |        
+2026-04-06 06:04:15,595 | INFO     |        ELEMENT WEIGHTS: as-1=5x, GCN4=5x, ocs-like=3x, others=1-2x
+2026-04-06 06:04:15,595 | INFO     |        NOTE: G-box = 0 in 2×CaMV 35S is expected and correct.
+2026-04-06 06:04:15,595 | INFO     |        CaMV 35S transcription is driven by as-1/ocs elements, not G-boxes.
+2026-04-06 06:04:15,595 | INFO     |        Do not discard candidates for lacking a G-box.
+2026-04-06 06:04:15,595 | INFO     |        
+2026-04-06 06:04:15,595 | INFO     |        Next: python step3_generate_candidates.py
+2026-04-06 06:04:15,596 | INFO     | 
+[36m==============================================================
+  STEP 3: Generating Synthetic Promoter Candidates with Evo2
+==============================================================[0m
+2026-04-06 06:04:15,596 | INFO     |        Model:             evo2-40b
+2026-04-06 06:04:15,596 | INFO     |        Variants per seed: 20
+2026-04-06 06:04:15,596 | INFO     |        Generated length:  800 bp
+2026-04-06 06:04:15,596 | INFO     |        Base temperature:  0.7
+2026-04-06 06:04:15,596 | INFO     |        top_k (max 6):     4
+2026-04-06 06:04:15,596 | INFO     |        
+2026-04-06 06:04:15,596 | INFO     | [32m  OK  [0m Seed 1 (35S core):     150 bp
+2026-04-06 06:04:15,596 | INFO     | [32m  OK  [0m Seed 2 (NbUBI):       200 bp
+2026-04-06 06:04:15,597 | INFO     | [32m  OK  [0m Seed 3 (null):         150 bp
+2026-04-06 06:04:15,597 | INFO     |        
+2026-04-06 06:04:15,597 | INFO     |        [1/3] seed_35S_core
+2026-04-06 06:04:15,597 | INFO     |          Seed preview: AACATCGTGGAAAAAGAAGACGTTCCAACCACGTCTTCAAAGCAAGTGGATTGATGTGAT...
+2026-04-06 06:41:09,566 | INFO     | [32m  OK  [0m   20 variants accepted (21 degenerate filtered)
+2026-04-06 06:41:12,566 | INFO     |        
+2026-04-06 06:41:12,566 | INFO     |        [2/3] seed_NbEndogenous
+2026-04-06 06:41:12,566 | INFO     |          Seed preview: ATGGGCCGGACCGGGCCGGCCCAGCAGGTAAAGAGGCGCGCAATAATATTACTGCGCCTC...
+2026-04-06 07:09:31,062 | INFO     | [32m  OK  [0m   20 variants accepted (10 degenerate filtered)
+2026-04-06 07:09:34,062 | INFO     |        
+2026-04-06 07:09:34,063 | INFO     |        [3/3] seed_null_control
+2026-04-06 07:09:34,063 | INFO     |          Seed preview: GTGCAGCGATTGCGTACAGCCTGGGATAACCGTTTAATACTGCTGGTTCAAAGCCGTCAA...
+2026-04-06 07:20:44,247 | INFO     | [33m  WARN[0m Connection error. Check internet.
+2026-04-06 07:23:34,594 | INFO     | [33m  WARN[0m Connection error. Check internet.
+2026-04-06 07:38:38,320 | INFO     | [32m  OK  [0m   20 variants accepted (14 degenerate filtered)
+2026-04-06 07:38:38,321 | INFO     | [32m  OK  [0m Saved 60 candidates → data/all_candidates.fasta
+2026-04-06 07:38:38,321 | INFO     |        
+2026-04-06 07:38:38,321 | INFO     |        Candidates by seed:
+2026-04-06 07:38:38,321 | INFO     |          seed_35S_core: 20 variants
+2026-04-06 07:38:38,321 | INFO     |          seed_NbEndogenous: 20 variants
+2026-04-06 07:38:38,321 | INFO     |          seed_null_control: 20 variants
+2026-04-06 07:38:38,321 | INFO     |        
+2026-04-06 07:38:38,321 | INFO     |        Next: python step4_filter_and_rank.py
+2026-04-06 07:38:38,322 | INFO     | 
+[36m==============================================================
+  STEP 4: Filtering and Ranking All 60 Candidates
+==============================================================[0m
+2026-04-06 07:38:38,322 | INFO     | [32m  OK  [0m Loaded 60 candidates
+2026-04-06 07:38:38,322 | INFO     |        
+2026-04-06 07:38:38,322 | INFO     |        Running cis-element analysis...
+2026-04-06 07:38:38,334 | INFO     | [32m  OK  [0m Hard filter: 60 → 4 candidates (56 removed: missing TATA/CAAT or GC out of 40–60%)
+2026-04-06 07:38:38,334 | INFO     |        
+2026-04-06 07:38:42,446 | INFO     |        Loading DNABERT-2 (zhihan1996/DNABERT-2-117M)...
+2026-04-06 07:38:42,446 | INFO     |        First run: downloads ~500 MB. This is normal. Please wait.
+2026-04-06 07:40:08,347 | INFO     | [33m  WARN[0m DNABERT-2 failed to load: 'BertConfig' object has no attribute 'pad_token_id'
+2026-04-06 07:40:08,348 | INFO     | [33m  WARN[0m Continuing with cis-element scores only.
+2026-04-06 07:40:08,348 | INFO     | [33m  WARN[0m DNABERT-2 unavailable. Using cis-element score only.
+2026-04-06 07:40:08,349 | INFO     |        
+2026-04-06 07:40:08,349 | INFO     |        Computing novelty and internal diversity...
+2026-04-06 07:40:08,461 | INFO     |        Novelty range: 0.533 – 0.570 (higher = more different from 35S)
+2026-04-06 07:40:11,004 | INFO     |        Internal diversity range: 0.488 – 0.540
+2026-04-06 07:40:11,005 | INFO     |        
+2026-04-06 07:40:11,005 | INFO     |        Computing Pareto front across 3 objectives:
+2026-04-06 07:40:11,005 | INFO     |          [1] strength  = weighted cis-element score
+2026-04-06 07:40:11,005 | INFO     |          [2] novelty   = edit distance from 2×35S
+2026-04-06 07:40:11,005 | INFO     |          [3] diversity = mean edit distance to other candidates
+2026-04-06 07:40:11,006 | INFO     | [32m  OK  [0m Pareto front 1 (best): 2 candidates
+2026-04-06 07:40:11,006 | INFO     |        Remaining candidates spread across 2 fronts
+2026-04-06 07:40:11,012 | INFO     |        
+2026-04-06 07:40:11,013 | INFO     | [33m  WARN[0m 1 null-seed candidates appear in top 10:
+2026-04-06 07:40:11,013 | INFO     | [33m  WARN[0m   Rank 1: seed_null_control_v11
+2026-04-06 07:40:11,013 | INFO     | [33m  WARN[0m This suggests Evo2 generation quality was low.
+2026-04-06 07:40:11,013 | INFO     | [33m  WARN[0m Try: EVO2_MODEL = 'evo2-40b' in config.py and rerun step 3.
+2026-04-06 07:40:11,014 | INFO     | [32m  OK  [0m Full scored table → outputs/all_candidates_scored.csv
+2026-04-06 07:40:11,014 | INFO     |        
+2026-04-06 07:40:11,015 | INFO     |        ==============================================================
+2026-04-06 07:40:11,015 | INFO     |          YOUR TOP 3 SYNTHETIC PROMOTER CANDIDATES
+2026-04-06 07:40:11,015 | INFO     |        ==============================================================
+2026-04-06 07:40:11,015 | INFO     |        
+2026-04-06 07:40:11,015 | INFO     |          Rank 1:  seed_null_control_v11
+2026-04-06 07:40:11,015 | INFO     |            Pareto front:         1
+2026-04-06 07:40:11,015 | INFO     |            Composite score:     0.8638
+2026-04-06 07:40:11,015 | INFO     |            Weighted strength:   31  (higher = stronger)
+2026-04-06 07:40:11,015 | INFO     |            Novelty vs 35S:     0.55  (higher = more different)
+2026-04-06 07:40:11,015 | INFO     |            Internal diversity:  0.5404  (higher = more unique)
+2026-04-06 07:40:11,015 | INFO     |            GC content:          41.5%
+2026-04-06 07:40:11,015 | INFO     |            as-1 elements:       3  [5x weight]
+2026-04-06 07:40:11,015 | INFO     |            GCN4 motif:         1  [5x weight]
+2026-04-06 07:40:11,015 | INFO     |            ocs-like elements:   0  [3x weight]
+2026-04-06 07:40:11,015 | INFO     |            TATA box:            2
+2026-04-06 07:40:11,015 | INFO     |            CAAT box:            5
+2026-04-06 07:40:11,015 | INFO     |            G-box:               0
+2026-04-06 07:40:11,015 | INFO     |            DNABERT-2 sim:       0.5  (vs 2×35S)
+2026-04-06 07:40:11,015 | INFO     |            Sequence (800 bp):
+2026-04-06 07:40:11,016 | INFO     |            CCTTAGCCCATGTACGTCTTTTGTTTCCTATTACGTCATTTGCGTTGTCATTTTATCTAACGTCTCTCTCGTCTACTCGT...
+2026-04-06 07:40:11,016 | INFO     |        
+2026-04-06 07:40:11,016 | INFO     |          Rank 2:  seed_35S_core_v11
+2026-04-06 07:40:11,016 | INFO     |            Pareto front:         1
+2026-04-06 07:40:11,016 | INFO     |            Composite score:     0.3609
+2026-04-06 07:40:11,016 | INFO     |            Weighted strength:   13  (higher = stronger)
+2026-04-06 07:40:11,016 | INFO     |            Novelty vs 35S:     0.57  (higher = more different)
+2026-04-06 07:40:11,016 | INFO     |            Internal diversity:  0.4921  (higher = more unique)
+2026-04-06 07:40:11,016 | INFO     |            GC content:          48.2%
+2026-04-06 07:40:11,016 | INFO     |            as-1 elements:       0  [5x weight]
+2026-04-06 07:40:11,016 | INFO     |            GCN4 motif:         0  [5x weight]
+2026-04-06 07:40:11,016 | INFO     |            ocs-like elements:   0  [3x weight]
+2026-04-06 07:40:11,016 | INFO     |            TATA box:            1
+2026-04-06 07:40:11,016 | INFO     |            CAAT box:            4
+2026-04-06 07:40:11,016 | INFO     |            G-box:               1
+2026-04-06 07:40:11,016 | INFO     |            DNABERT-2 sim:       0.5  (vs 2×35S)
+2026-04-06 07:40:11,016 | INFO     |            Sequence (800 bp):
+2026-04-06 07:40:11,016 | INFO     |            GGGTCATTTTTTTCAAATCATTCATACATTTATTGTAATCAATCTTATTCTCTTTATAAAAGAAGTAGACTTAGGCATCG...
+2026-04-06 07:40:11,016 | INFO     |        
+2026-04-06 07:40:11,016 | INFO     |          Rank 3:  seed_35S_core_v03
+2026-04-06 07:40:11,016 | INFO     |            Pareto front:         2
+2026-04-06 07:40:11,016 | INFO     |            Composite score:     0.2275
+2026-04-06 07:40:11,017 | INFO     |            Weighted strength:   17  (higher = stronger)
+2026-04-06 07:40:11,017 | INFO     |            Novelty vs 35S:     0.54  (higher = more different)
+2026-04-06 07:40:11,017 | INFO     |            Internal diversity:  0.4879  (higher = more unique)
+2026-04-06 07:40:11,017 | INFO     |            GC content:          53.8%
+2026-04-06 07:40:11,017 | INFO     |            as-1 elements:       3  [5x weight]
+2026-04-06 07:40:11,017 | INFO     |            GCN4 motif:         0  [5x weight]
+2026-04-06 07:40:11,017 | INFO     |            ocs-like elements:   0  [3x weight]
+2026-04-06 07:40:11,017 | INFO     |            TATA box:            1
+2026-04-06 07:40:11,017 | INFO     |            CAAT box:            1
+2026-04-06 07:40:11,017 | INFO     |            G-box:               0
+2026-04-06 07:40:11,017 | INFO     |            DNABERT-2 sim:       0.5  (vs 2×35S)
+2026-04-06 07:40:11,017 | INFO     |            Sequence (800 bp):
+2026-04-06 07:40:11,017 | INFO     |            GGGTCATTTTTTTCAAATCATTCATACATTTATTGTAATCAATCTTATTCTCTTTATAAAAGAAGTAGACTTAGGCATCG...
+2026-04-06 07:40:11,017 | INFO     | [32m  OK  [0m 
+Top 3 FASTA → outputs/top3_candidates.fasta
+2026-04-06 07:40:11,018 | INFO     | [32m  OK  [0m Top-10 ranking table → outputs/ranking_table.csv
+2026-04-06 07:40:11,018 | INFO     |        
+2026-04-06 07:40:11,018 | INFO     |        NEXT STEPS:
+2026-04-06 07:40:11,018 | INFO     |          1. Open outputs/top3_candidates.fasta
+2026-04-06 07:40:11,018 | INFO     |          2. Go to: https://bioinformatics.psb.ugent.be/webtools/plantcare
+2026-04-06 07:40:11,018 | INFO     |          3. Paste each sequence (one at a time) and run analysis
+2026-04-06 07:40:11,018 | INFO     |          4. Check each result for TATA box, CAAT box, as-1 elements
+2026-04-06 07:40:11,019 | INFO     |          5. Discard any candidate where PlantCARE shows NO TATA box
+2026-04-06 07:40:11,019 | INFO     |          6. Remaining candidates go to AlphaGenome validation
+2026-04-06 07:40:11,019 | INFO     | 
+==============================================================
+2026-04-06 07:40:11,019 | INFO     |   PIPELINE COMPLETE
+2026-04-06 07:40:11,019 | INFO     | ==============================================================
+2026-04-06 07:40:11,019 | INFO     | 
+  Top 3 candidates:   outputs/top3_candidates.fasta
+2026-04-06 07:40:11,019 | INFO     |   Full ranking:       outputs/ranking_table.csv
+2026-04-06 07:40:11,019 | INFO     |   All scored:         outputs/all_candidates_scored.csv
+2026-04-06 07:40:11,019 | INFO     |   Full log:           logs/run.log
+2026-04-06 07:40:11,019 | INFO     | 
+  Take top3_candidates.fasta to PlantCARE for final validation.
+2026-04-06 08:12:32,433 | INFO     | 
+==============================================================
+2026-04-06 08:12:32,433 | INFO     |   PROMOTER DESIGN PIPELINE — FULL RUN
+2026-04-06 08:12:32,433 | INFO     | ==============================================================
+2026-04-06 08:12:34,421 | INFO     | 
+[36m==============================================================
+  STEP 1: Building Reference Promoter Dataset
+==============================================================[0m
+2026-04-06 08:12:34,422 | INFO     | [32m  OK  [0m 2×CaMV 35S: 746 bp | GC 46.1%
+2026-04-06 08:12:34,422 | INFO     |          Source: Jameel et al., Plants 2020, 10(8):1700, Suppl. S1
+2026-04-06 08:12:34,422 | INFO     |          Structure: Yellow(330) + Brown(327) + Red/core(89) = 746 bp
+2026-04-06 08:12:34,422 | INFO     |        
+2026-04-06 08:12:34,422 | INFO     |        Fetching NbACT3 (AY007693) — N. benthamiana actin 3 — constitutive housekeeping
+2026-04-06 08:12:36,043 | INFO     | [33m  WARN[0m NbACT3: No CDS feature found in record. Skipping.
+2026-04-06 08:12:36,044 | INFO     |        Fetching NbUBI (AJ012639) — Nicotiana ubiquitin — constitutive, all tissues
+2026-04-06 08:12:37,612 | INFO     | [32m  OK  [0m NbUBI: 1098 bp | GC 45.9%
+2026-04-06 08:12:37,612 | INFO     |        Fetching NbRbcS (X02591) — Nicotiana RbcS — highest expression in leaf tissue
+2026-04-06 08:12:39,162 | INFO     | [32m  OK  [0m NbRbcS: 505 bp | GC 37.2%
+2026-04-06 08:12:39,163 | INFO     | [32m  OK  [0m Saved 3 reference promoters → data/reference_promoters.fasta
+2026-04-06 08:12:39,163 | INFO     |        
+2026-04-06 08:12:39,163 | INFO     |        Reference promoters collected:
+2026-04-06 08:12:39,163 | INFO     |          2x_CaMV_35S           746 bp   GC: 46.1%
+2026-04-06 08:12:39,164 | INFO     |          NbUBI                1098 bp   GC: 45.9%
+2026-04-06 08:12:39,164 | INFO     |          NbRbcS                505 bp   GC: 37.2%
+2026-04-06 08:12:39,164 | INFO     |        
+2026-04-06 08:12:39,164 | INFO     |        Next: python step2_score_references.py
+2026-04-06 08:12:39,164 | INFO     | 
+[36m==============================================================
+  STEP 2: Scoring Reference Promoters for Cis-Elements
+==============================================================[0m
+2026-04-06 08:12:39,164 | INFO     | [32m  OK  [0m Loaded 3 reference promoters
+2026-04-06 08:12:39,167 | INFO     | [32m  OK  [0m Scored 2x_CaMV_35S: 12 total elements
+2026-04-06 08:12:39,167 | INFO     | [32m  OK  [0m Scored NbUBI: 8 total elements
+2026-04-06 08:12:39,168 | INFO     | [32m  OK  [0m Scored NbRbcS: 4 total elements
+2026-04-06 08:12:39,169 | INFO     |        
+2026-04-06 08:12:39,169 | INFO     |        CIS-ELEMENT PROFILE — REFERENCE PROMOTERS
+2026-04-06 08:12:39,169 | INFO     |        
+2026-04-06 08:12:39,170 | INFO     |          Element                2x_CaMV_35S           NbUBI          NbRbcS
+2026-04-06 08:12:39,170 | INFO     |          ----------------------------------------------------------------
+2026-04-06 08:12:39,171 | INFO     |          TATA_box          [92m             2.0[0m[92m             1.0[0m[91m             0.0[0m
+2026-04-06 08:12:39,171 | INFO     |          CAAT_box          [92m             1.0[0m[92m             5.0[0m[92m             3.0[0m
+2026-04-06 08:12:39,171 | INFO     |          as1_element       [92m             7.0[0m[92m             1.0[0m[90m             0.0[0m
+2026-04-06 08:12:39,171 | INFO     |          GCN4_motif        [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 08:12:39,172 | INFO     |          ocs_like          [92m             2.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 08:12:39,172 | INFO     |          G_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 08:12:39,172 | INFO     |          Box_II            [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 08:12:39,172 | INFO     |          GT1_motif         [90m             0.0[0m[90m             0.0[0m[92m             1.0[0m
+2026-04-06 08:12:39,172 | INFO     |          I_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 08:12:39,173 | INFO     |          W_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 08:12:39,173 | INFO     |          ABRE              [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 08:12:39,173 | INFO     |          MBS               [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 08:12:39,173 | INFO     |          ARE               [90m             0.0[0m[92m             1.0[0m[90m             0.0[0m
+2026-04-06 08:12:39,173 | INFO     |          total_elements    [92m            12.0[0m[92m             8.0[0m[92m             4.0[0m
+2026-04-06 08:12:39,174 | INFO     |          weighted_score    [92m            44.0[0m[92m            13.0[0m[92m             5.0[0m
+2026-04-06 08:12:39,174 | INFO     |          gc_pct            [92m            46.1[0m[92m            45.9[0m[92m            37.2[0m
+2026-04-06 08:12:39,174 | INFO     |          ----------------------------------------------------------------
+2026-04-06 08:12:39,174 | INFO     |          weighted_score         2x_CaMV_35S           NbUBI          NbRbcS
+2026-04-06 08:12:39,174 | INFO     |          ----------------------------------------------------------------
+2026-04-06 08:12:39,174 | INFO     |          (strength)        [92m            44.0[0m
+2026-04-06 08:12:39,174 | INFO     |          (strength)        [92m            13.0[0m
+2026-04-06 08:12:39,175 | INFO     |          (strength)        [92m             5.0[0m
+2026-04-06 08:12:39,178 | INFO     | [32m  OK  [0m Saved → data/reference_element_scores.csv
+2026-04-06 08:12:39,178 | INFO     |        
+2026-04-06 08:12:39,178 | INFO     |        DESIGN TARGET (your synthetic candidates must meet ALL of these):
+2026-04-06 08:12:39,178 | INFO     |          TATA box:        >= 1     [2×35S = 2]  HARD FILTER
+2026-04-06 08:12:39,178 | INFO     |          CAAT box:        >= 1     [2×35S = 1]  HARD FILTER
+2026-04-06 08:12:39,178 | INFO     |          as-1 elements:   >= 7     [2×35S = 7]  PRIMARY (5x weight)
+2026-04-06 08:12:39,178 | INFO     |          GCN4 motif:      >= 0     [2×35S = 0]  PRIMARY (5x weight)
+2026-04-06 08:12:39,178 | INFO     |          ocs-like:        >= 2     [2×35S = 2]  secondary (3x weight)
+2026-04-06 08:12:39,178 | INFO     |          G-box:           >= 0     [2×35S = 0]  soft preference only
+2026-04-06 08:12:39,178 | INFO     |          Total elements:  >= 12     [match or beat 2×35S raw count]
+2026-04-06 08:12:39,178 | INFO     |          Weighted score:  >= 44     [2×35S baseline — higher is better]
+2026-04-06 08:12:39,178 | INFO     |          GC content:      40-60%   [2×35S = 46.1%]
+2026-04-06 08:12:39,178 | INFO     |        
+2026-04-06 08:12:39,178 | INFO     |        ELEMENT WEIGHTS: as-1=5x, GCN4=5x, ocs-like=3x, others=1-2x
+2026-04-06 08:12:39,179 | INFO     |        NOTE: G-box = 0 in 2×CaMV 35S is expected and correct.
+2026-04-06 08:12:39,179 | INFO     |        CaMV 35S transcription is driven by as-1/ocs elements, not G-boxes.
+2026-04-06 08:12:39,179 | INFO     |        Do not discard candidates for lacking a G-box.
+2026-04-06 08:12:39,179 | INFO     |        
+2026-04-06 08:12:39,179 | INFO     |        Next: python step3_generate_candidates.py
+2026-04-06 08:12:39,179 | INFO     | 
+[36m==============================================================
+  STEP 3: Generating Synthetic Promoter Candidates with Evo2
+==============================================================[0m
+2026-04-06 08:12:39,179 | INFO     |        Model:             evo2-40b
+2026-04-06 08:12:39,179 | INFO     |        Variants per seed: 20
+2026-04-06 08:12:39,179 | INFO     |        Generated length:  800 bp
+2026-04-06 08:12:39,179 | INFO     |        Base temperature:  0.7
+2026-04-06 08:12:39,179 | INFO     |        top_k (max 6):     4
+2026-04-06 08:12:39,179 | INFO     |        
+2026-04-06 08:12:39,179 | INFO     | [32m  OK  [0m Seed 1 (35S core):     150 bp
+2026-04-06 08:12:39,180 | INFO     | [32m  OK  [0m Seed 2 (NbUBI):       200 bp
+2026-04-06 08:12:39,180 | INFO     | [32m  OK  [0m Seed 3 (null):         150 bp
+2026-04-06 08:12:39,180 | INFO     |        
+2026-04-06 08:12:39,180 | INFO     |        [1/3] seed_35S_core
+2026-04-06 08:12:39,180 | INFO     |          Seed preview: AACATCGTGGAAAAAGAAGACGTTCCAACCACGTCTTCAAAGCAAGTGGATTGATGTGAT...
+2026-04-06 08:50:24,857 | INFO     | [32m  OK  [0m   20 variants accepted (23 degenerate filtered)
+2026-04-06 08:50:27,858 | INFO     |        
+2026-04-06 08:50:27,858 | INFO     |        [2/3] seed_NbEndogenous
+2026-04-06 08:50:27,858 | INFO     |          Seed preview: ATGGGCCGGACCGGGCCGGCCCAGCAGGTAAAGAGGCGCGCAATAATATTACTGCGCCTC...
+2026-04-06 09:24:02,312 | INFO     | [32m  OK  [0m   20 variants accepted (15 degenerate filtered)
+2026-04-06 09:24:05,313 | INFO     |        
+2026-04-06 09:24:05,313 | INFO     |        [3/3] seed_null_control
+2026-04-06 09:24:05,313 | INFO     |          Seed preview: GTGCAGCGATTGCGTACAGCCTGGGATAACCGTTTAATACTGCTGGTTCAAAGCCGTCAA...
+2026-04-06 09:43:01,537 | INFO     | [32m  OK  [0m   20 variants accepted (1 degenerate filtered)
+2026-04-06 09:43:01,538 | INFO     | [32m  OK  [0m Saved 60 candidates → data/all_candidates.fasta
+2026-04-06 09:43:01,538 | INFO     |        
+2026-04-06 09:43:01,538 | INFO     |        Candidates by seed:
+2026-04-06 09:43:01,539 | INFO     |          seed_35S_core: 20 variants
+2026-04-06 09:43:01,539 | INFO     |          seed_NbEndogenous: 20 variants
+2026-04-06 09:43:01,539 | INFO     |          seed_null_control: 20 variants
+2026-04-06 09:43:01,539 | INFO     |        
+2026-04-06 09:43:01,539 | INFO     |        Next: python step4_filter_and_rank.py
+2026-04-06 09:43:01,539 | INFO     | 
+[36m==============================================================
+  STEP 4: Filtering and Ranking All 60 Candidates
+==============================================================[0m
+2026-04-06 09:43:01,541 | INFO     | [32m  OK  [0m Loaded 60 candidates
+2026-04-06 09:43:01,541 | INFO     |        
+2026-04-06 09:43:01,541 | INFO     |        Running cis-element analysis...
+2026-04-06 09:43:01,560 | INFO     | [32m  OK  [0m Hard filter: 60 → 4 candidates (56 removed: missing TATA/CAAT or GC out of 40–60%)
+2026-04-06 09:43:01,561 | INFO     |        
+2026-04-06 09:43:04,894 | INFO     |        Loading DNABERT-2 (zhihan1996/DNABERT-2-117M)...
+2026-04-06 09:43:04,895 | INFO     |        First run: downloads ~500 MB. This is normal. Please wait.
+2026-04-06 09:43:07,891 | INFO     | [33m  WARN[0m DNABERT-2 failed to load: 'BertConfig' object has no attribute 'pad_token_id'
+2026-04-06 09:43:07,892 | INFO     | [33m  WARN[0m Continuing with cis-element scores only.
+2026-04-06 09:43:07,892 | INFO     | [33m  WARN[0m DNABERT-2 unavailable. Using cis-element score only.
+2026-04-06 09:43:07,892 | INFO     | [33m  WARN[0m Rankings are PROVISIONAL — without DNABERT-2 similarity,
+2026-04-06 09:43:07,892 | INFO     | [33m  WARN[0m null-seed candidates may rank highly by chance.
+2026-04-06 09:43:07,892 | INFO     | [33m  WARN[0m Re-run step 4 after installing: pip install einops
+2026-04-06 09:43:07,893 | INFO     |        
+2026-04-06 09:43:07,894 | INFO     |        Computing novelty and internal diversity...
+2026-04-06 09:43:08,012 | INFO     |        Novelty range: 0.553 – 0.597 (higher = more different from 35S)
+2026-04-06 09:43:10,557 | INFO     |        Internal diversity range: 0.547 – 0.584
+2026-04-06 09:43:10,558 | INFO     |        
+2026-04-06 09:43:10,558 | INFO     |        Computing Pareto front across 3 objectives:
+2026-04-06 09:43:10,558 | INFO     |          [1] strength  = weighted cis-element score
+2026-04-06 09:43:10,558 | INFO     |          [2] novelty   = edit distance from 2×35S
+2026-04-06 09:43:10,558 | INFO     |          [3] diversity = mean edit distance to other candidates
+2026-04-06 09:43:10,559 | INFO     | [32m  OK  [0m Pareto front 1 (best): 3 candidates
+2026-04-06 09:43:10,559 | INFO     |        Remaining candidates spread across 2 fronts
+2026-04-06 09:43:10,562 | INFO     |        
+2026-04-06 09:43:10,562 | INFO     | [32m  OK  [0m Null control check passed — no null-seed candidates in top 10.
+2026-04-06 09:43:10,564 | INFO     | [32m  OK  [0m Full scored table → outputs/all_candidates_scored.csv
+2026-04-06 09:43:10,564 | INFO     | [33m  WARN[0m DNABERT-2 unavailable: top-3 will prefer candidates from
+2026-04-06 09:43:10,564 | INFO     | [33m  WARN[0m real seeds (35S or endogenous). Null-seed candidates are
+2026-04-06 09:43:10,564 | INFO     | [33m  WARN[0m shown in the ranking CSV but excluded from top-3 FASTA.
+2026-04-06 09:43:10,565 | INFO     |        
+2026-04-06 09:43:10,565 | INFO     |        ==============================================================
+2026-04-06 09:43:10,565 | INFO     |          YOUR TOP 3 SYNTHETIC PROMOTER CANDIDATES
+2026-04-06 09:43:10,566 | INFO     |        ==============================================================
+2026-04-06 09:43:10,566 | INFO     |        
+2026-04-06 09:43:10,566 | INFO     |          Rank 1:  seed_NbEndogenous_v05
+2026-04-06 09:43:10,566 | INFO     |            Pareto front:         1
+2026-04-06 09:43:10,566 | INFO     |            Composite score:     0.8541
+2026-04-06 09:43:10,566 | INFO     |            Weighted strength:   27  (higher = stronger)
+2026-04-06 09:43:10,566 | INFO     |            Novelty vs 35S:     0.5967  (higher = more different)
+2026-04-06 09:43:10,566 | INFO     |            Internal diversity:  0.5621  (higher = more unique)
+2026-04-06 09:43:10,566 | INFO     |            GC content:          40.9%
+2026-04-06 09:43:10,566 | INFO     |            as-1 elements:       0  [5x weight]
+2026-04-06 09:43:10,566 | INFO     |            GCN4 motif:         0  [5x weight]
+2026-04-06 09:43:10,566 | INFO     |            ocs-like elements:   0  [3x weight]
+2026-04-06 09:43:10,566 | INFO     |            TATA box:            24
+2026-04-06 09:43:10,566 | INFO     |            CAAT box:            3
+2026-04-06 09:43:10,566 | INFO     |            G-box:               0
+2026-04-06 09:43:10,566 | INFO     |            DNABERT-2 sim:       0.0  (vs 2×35S)
+2026-04-06 09:43:10,566 | INFO     |            Sequence (800 bp):
+2026-04-06 09:43:10,566 | INFO     |            ATCCTGTGCTTACTTTCTCACCTATATAAAGTAGCTATAGCATATCTCTTACCATTTTCCTTAGATTGAACACATATTTC...
+2026-04-06 09:43:10,567 | INFO     |        
+2026-04-06 09:43:10,567 | INFO     |          Rank 2:  seed_NbEndogenous_v14
+2026-04-06 09:43:10,567 | INFO     |            Pareto front:         1
+2026-04-06 09:43:10,567 | INFO     |            Composite score:     0.4228
+2026-04-06 09:43:10,567 | INFO     |            Weighted strength:   3  (higher = stronger)
+2026-04-06 09:43:10,567 | INFO     |            Novelty vs 35S:     0.5833  (higher = more different)
+2026-04-06 09:43:10,567 | INFO     |            Internal diversity:  0.5837  (higher = more unique)
+2026-04-06 09:43:10,567 | INFO     |            GC content:          40.0%
+2026-04-06 09:43:10,567 | INFO     |            as-1 elements:       0  [5x weight]
+2026-04-06 09:43:10,567 | INFO     |            GCN4 motif:         0  [5x weight]
+2026-04-06 09:43:10,567 | INFO     |            ocs-like elements:   0  [3x weight]
+2026-04-06 09:43:10,567 | INFO     |            TATA box:            2
+2026-04-06 09:43:10,567 | INFO     |            CAAT box:            1
+2026-04-06 09:43:10,567 | INFO     |            G-box:               0
+2026-04-06 09:43:10,567 | INFO     |            DNABERT-2 sim:       0.0  (vs 2×35S)
+2026-04-06 09:43:10,567 | INFO     |            Sequence (800 bp):
+2026-04-06 09:43:10,567 | INFO     |            CGAGGATTTGAGCGACCTTGATTGCGATCAAATCAACGTCTTTTGAATTGTAAACCCAGCATGAACCATCGTCATACTGA...
+2026-04-06 09:43:10,567 | INFO     |        
+2026-04-06 09:43:10,567 | INFO     |          Rank 3:  seed_NbEndogenous_v16
+2026-04-06 09:43:10,567 | INFO     |            Pareto front:         1
+2026-04-06 09:43:10,567 | INFO     |            Composite score:     0.1445
+2026-04-06 09:43:10,567 | INFO     |            Weighted strength:   4  (higher = stronger)
+2026-04-06 09:43:10,567 | INFO     |            Novelty vs 35S:     0.5533  (higher = more different)
+2026-04-06 09:43:10,568 | INFO     |            Internal diversity:  0.565  (higher = more unique)
+2026-04-06 09:43:10,568 | INFO     |            GC content:          50.6%
+2026-04-06 09:43:10,568 | INFO     |            as-1 elements:       0  [5x weight]
+2026-04-06 09:43:10,568 | INFO     |            GCN4 motif:         0  [5x weight]
+2026-04-06 09:43:10,568 | INFO     |            ocs-like elements:   0  [3x weight]
+2026-04-06 09:43:10,568 | INFO     |            TATA box:            1
+2026-04-06 09:43:10,568 | INFO     |            CAAT box:            3
+2026-04-06 09:43:10,568 | INFO     |            G-box:               0
+2026-04-06 09:43:10,568 | INFO     |            DNABERT-2 sim:       0.0  (vs 2×35S)
+2026-04-06 09:43:10,568 | INFO     |            Sequence (800 bp):
+2026-04-06 09:43:10,568 | INFO     |            GAAAAAATGAATCAGGTGGTCGGATTTCGGGTTTGCCACTCAAAATCCGAAATCCGACCACCTGATTCATTTTTTCGAAT...
+2026-04-06 09:43:10,568 | INFO     | [32m  OK  [0m 
+Top 3 FASTA → outputs/top3_candidates.fasta
+2026-04-06 09:43:10,570 | INFO     | [32m  OK  [0m Top-10 ranking table → outputs/ranking_table.csv
+2026-04-06 09:43:10,570 | INFO     |        
+2026-04-06 09:43:10,570 | INFO     |        NEXT STEPS:
+2026-04-06 09:43:10,570 | INFO     |          1. Open outputs/top3_candidates.fasta
+2026-04-06 09:43:10,570 | INFO     |          2. Go to: https://bioinformatics.psb.ugent.be/webtools/plantcare
+2026-04-06 09:43:10,570 | INFO     |          3. Paste each sequence (one at a time) and run analysis
+2026-04-06 09:43:10,570 | INFO     |          4. Check each result for TATA box, CAAT box, as-1 elements
+2026-04-06 09:43:10,570 | INFO     |          5. Discard any candidate where PlantCARE shows NO TATA box
+2026-04-06 09:43:10,570 | INFO     |          6. Remaining candidates go to AlphaGenome validation
+2026-04-06 09:43:10,570 | INFO     | 
+==============================================================
+2026-04-06 09:43:10,570 | INFO     |   PIPELINE COMPLETE
+2026-04-06 09:43:10,570 | INFO     | ==============================================================
+2026-04-06 09:43:10,570 | INFO     | 
+  Top 3 candidates:   outputs/top3_candidates.fasta
+2026-04-06 09:43:10,570 | INFO     |   Full ranking:       outputs/ranking_table.csv
+2026-04-06 09:43:10,570 | INFO     |   All scored:         outputs/all_candidates_scored.csv
+2026-04-06 09:43:10,570 | INFO     |   Full log:           logs/run.log
+2026-04-06 09:43:10,570 | INFO     | 
+  Take top3_candidates.fasta to PlantCARE for final validation.
+2026-04-06 09:55:50,261 | INFO     | 
+==============================================================
+2026-04-06 09:55:50,261 | INFO     |   PROMOTER DESIGN PIPELINE — FULL RUN
+2026-04-06 09:55:50,261 | INFO     | ==============================================================
+2026-04-06 09:55:52,418 | INFO     | 
+[36m==============================================================
+  STEP 1: Building Reference Promoter Dataset
+==============================================================[0m
+2026-04-06 09:55:52,418 | INFO     | [32m  OK  [0m 2×CaMV 35S: 746 bp | GC 46.1%
+2026-04-06 09:55:52,418 | INFO     |          Source: Jameel et al., Plants 2020, 10(8):1700, Suppl. S1
+2026-04-06 09:55:52,418 | INFO     |          Structure: Yellow(330) + Brown(327) + Red/core(89) = 746 bp
+2026-04-06 09:55:52,418 | INFO     |        
+2026-04-06 09:55:52,418 | INFO     |        Fetching NbACT3 (AY007693) — N. benthamiana actin 3 — constitutive housekeeping
+2026-04-06 09:55:54,012 | INFO     | [33m  WARN[0m NbACT3: No CDS feature found in record. Skipping.
+2026-04-06 09:55:54,013 | INFO     |        Fetching NbUBI (AJ012639) — Nicotiana ubiquitin — constitutive, all tissues
+2026-04-06 09:55:55,689 | INFO     | [32m  OK  [0m NbUBI: 1098 bp | GC 45.9%
+2026-04-06 09:55:55,689 | INFO     |        Fetching NbRbcS (X02591) — Nicotiana RbcS — highest expression in leaf tissue
+2026-04-06 09:55:57,370 | INFO     | [32m  OK  [0m NbRbcS: 505 bp | GC 37.2%
+2026-04-06 09:55:57,370 | INFO     | [32m  OK  [0m Saved 3 reference promoters → data/reference_promoters.fasta
+2026-04-06 09:55:57,371 | INFO     |        
+2026-04-06 09:55:57,371 | INFO     |        Reference promoters collected:
+2026-04-06 09:55:57,371 | INFO     |          2x_CaMV_35S           746 bp   GC: 46.1%
+2026-04-06 09:55:57,371 | INFO     |          NbUBI                1098 bp   GC: 45.9%
+2026-04-06 09:55:57,371 | INFO     |          NbRbcS                505 bp   GC: 37.2%
+2026-04-06 09:55:57,371 | INFO     |        
+2026-04-06 09:55:57,371 | INFO     |        Next: python step2_score_references.py
+2026-04-06 09:55:57,372 | INFO     | 
+[36m==============================================================
+  STEP 2: Scoring Reference Promoters for Cis-Elements
+==============================================================[0m
+2026-04-06 09:55:57,372 | INFO     | [32m  OK  [0m Loaded 3 reference promoters
+2026-04-06 09:55:57,374 | INFO     | [32m  OK  [0m Scored 2x_CaMV_35S: 12 total elements
+2026-04-06 09:55:57,375 | INFO     | [32m  OK  [0m Scored NbUBI: 8 total elements
+2026-04-06 09:55:57,375 | INFO     | [32m  OK  [0m Scored NbRbcS: 4 total elements
+2026-04-06 09:55:57,377 | INFO     |        
+2026-04-06 09:55:57,377 | INFO     |        CIS-ELEMENT PROFILE — REFERENCE PROMOTERS
+2026-04-06 09:55:57,377 | INFO     |        
+2026-04-06 09:55:57,377 | INFO     |          Element                2x_CaMV_35S           NbUBI          NbRbcS
+2026-04-06 09:55:57,377 | INFO     |          ----------------------------------------------------------------
+2026-04-06 09:55:57,378 | INFO     |          TATA_box          [92m             2.0[0m[92m             1.0[0m[91m             0.0[0m
+2026-04-06 09:55:57,379 | INFO     |          CAAT_box          [92m             1.0[0m[92m             5.0[0m[92m             3.0[0m
+2026-04-06 09:55:57,379 | INFO     |          as1_element       [92m             7.0[0m[92m             1.0[0m[90m             0.0[0m
+2026-04-06 09:55:57,379 | INFO     |          GCN4_motif        [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 09:55:57,380 | INFO     |          ocs_like          [92m             2.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 09:55:57,380 | INFO     |          G_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 09:55:57,380 | INFO     |          Box_II            [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 09:55:57,380 | INFO     |          GT1_motif         [90m             0.0[0m[90m             0.0[0m[92m             1.0[0m
+2026-04-06 09:55:57,380 | INFO     |          I_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 09:55:57,380 | INFO     |          W_box             [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 09:55:57,381 | INFO     |          ABRE              [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 09:55:57,381 | INFO     |          MBS               [90m             0.0[0m[90m             0.0[0m[90m             0.0[0m
+2026-04-06 09:55:57,381 | INFO     |          ARE               [90m             0.0[0m[92m             1.0[0m[90m             0.0[0m
+2026-04-06 09:55:57,381 | INFO     |          total_elements    [92m            12.0[0m[92m             8.0[0m[92m             4.0[0m
+2026-04-06 09:55:57,381 | INFO     |          weighted_score    [92m            44.0[0m[92m            13.0[0m[92m             5.0[0m
+2026-04-06 09:55:57,382 | INFO     |          gc_pct            [92m            46.1[0m[92m            45.9[0m[92m            37.2[0m
+2026-04-06 09:55:57,382 | INFO     |          ----------------------------------------------------------------
+2026-04-06 09:55:57,382 | INFO     |          weighted_score         2x_CaMV_35S           NbUBI          NbRbcS
+2026-04-06 09:55:57,382 | INFO     |          ----------------------------------------------------------------
+2026-04-06 09:55:57,382 | INFO     |          (strength)        [92m            44.0[0m
+2026-04-06 09:55:57,382 | INFO     |          (strength)        [92m            13.0[0m
+2026-04-06 09:55:57,383 | INFO     |          (strength)        [92m             5.0[0m
+2026-04-06 09:55:57,385 | INFO     | [32m  OK  [0m Saved → data/reference_element_scores.csv
+2026-04-06 09:55:57,385 | INFO     |        
+2026-04-06 09:55:57,385 | INFO     |        DESIGN TARGET (your synthetic candidates must meet ALL of these):
+2026-04-06 09:55:57,386 | INFO     |          TATA box:        >= 1     [2×35S = 2]  HARD FILTER
+2026-04-06 09:55:57,386 | INFO     |          CAAT box:        >= 1     [2×35S = 1]  HARD FILTER
+2026-04-06 09:55:57,386 | INFO     |          as-1 elements:   >= 7     [2×35S = 7]  PRIMARY (5x weight)
+2026-04-06 09:55:57,386 | INFO     |          GCN4 motif:      >= 0     [2×35S = 0]  PRIMARY (5x weight)
+2026-04-06 09:55:57,386 | INFO     |          ocs-like:        >= 2     [2×35S = 2]  secondary (3x weight)
+2026-04-06 09:55:57,386 | INFO     |          G-box:           >= 0     [2×35S = 0]  soft preference only
+2026-04-06 09:55:57,386 | INFO     |          Total elements:  >= 12     [match or beat 2×35S raw count]
+2026-04-06 09:55:57,386 | INFO     |          Weighted score:  >= 44     [2×35S baseline — higher is better]
+2026-04-06 09:55:57,386 | INFO     |          GC content:      40-60%   [2×35S = 46.1%]
+2026-04-06 09:55:57,386 | INFO     |        
+2026-04-06 09:55:57,386 | INFO     |        ELEMENT WEIGHTS: as-1=5x, GCN4=5x, ocs-like=3x, others=1-2x
+2026-04-06 09:55:57,386 | INFO     |        NOTE: G-box = 0 in 2×CaMV 35S is expected and correct.
+2026-04-06 09:55:57,386 | INFO     |        CaMV 35S transcription is driven by as-1/ocs elements, not G-boxes.
+2026-04-06 09:55:57,386 | INFO     |        Do not discard candidates for lacking a G-box.
+2026-04-06 09:55:57,386 | INFO     |        
+2026-04-06 09:55:57,387 | INFO     |        Next: python step3_generate_candidates.py
+2026-04-06 09:55:57,387 | INFO     | 
+[36m==============================================================
+  STEP 3: Generating Synthetic Promoter Candidates with Evo2
+==============================================================[0m
+2026-04-06 09:55:57,387 | INFO     |        Model:             evo2-40b
+2026-04-06 09:55:57,387 | INFO     |        Variants per seed: 20
+2026-04-06 09:55:57,387 | INFO     |        Generated length:  800 bp
+2026-04-06 09:55:57,387 | INFO     |        Base temperature:  0.7
+2026-04-06 09:55:57,387 | INFO     |        top_k (max 6):     4
+2026-04-06 09:55:57,387 | INFO     |        
+2026-04-06 09:55:57,387 | INFO     | [32m  OK  [0m Seed 1 (35S core):     150 bp
+2026-04-06 09:55:57,387 | INFO     | [32m  OK  [0m Seed 2 (NbUBI):       200 bp
+2026-04-06 09:55:57,389 | INFO     | [32m  OK  [0m Seed 3 (null):         150 bp
+2026-04-06 09:55:57,389 | INFO     |        
+2026-04-06 09:55:57,389 | INFO     |        [1/3] seed_35S_core
+2026-04-06 09:55:57,389 | INFO     |          Seed preview: AACATCGTGGAAAAAGAAGACGTTCCAACCACGTCTTCAAAGCAAGTGGATTGATGTGAT...
+2026-04-06 10:21:20,745 | INFO     | [32m  OK  [0m   20 variants accepted (8 degenerate filtered)
+2026-04-06 10:21:23,745 | INFO     |        
+2026-04-06 10:21:23,746 | INFO     |        [2/3] seed_NbEndogenous
+2026-04-06 10:21:23,746 | INFO     |          Seed preview: ATGGGCCGGACCGGGCCGGCCCAGCAGGTAAAGAGGCGCGCAATAATATTACTGCGCCTC...
+2026-04-06 10:45:06,804 | INFO     | [32m  OK  [0m   20 variants accepted (5 degenerate filtered)
+2026-04-06 10:45:09,804 | INFO     |        
+2026-04-06 10:45:09,805 | INFO     |        [3/3] seed_null_control
+2026-04-06 10:45:09,805 | INFO     |          Seed preview: GTGCAGCGATTGCGTACAGCCTGGGATAACCGTTTAATACTGCTGGTTCAAAGCCGTCAA...
+2026-04-06 11:13:00,865 | INFO     | [32m  OK  [0m   20 variants accepted (10 degenerate filtered)
+2026-04-06 11:13:00,867 | INFO     | [32m  OK  [0m Saved 60 candidates → data/all_candidates.fasta
+2026-04-06 11:13:00,867 | INFO     |        
+2026-04-06 11:13:00,867 | INFO     |        Candidates by seed:
+2026-04-06 11:13:00,867 | INFO     |          seed_35S_core: 20 variants
+2026-04-06 11:13:00,868 | INFO     |          seed_NbEndogenous: 20 variants
+2026-04-06 11:13:00,868 | INFO     |          seed_null_control: 20 variants
+2026-04-06 11:13:00,868 | INFO     |        
+2026-04-06 11:13:00,868 | INFO     |        Next: python step4_filter_and_rank.py
+2026-04-06 11:13:00,868 | INFO     | 
+[36m==============================================================
+  STEP 4: Filtering and Ranking All 60 Candidates
+==============================================================[0m
+2026-04-06 11:13:00,870 | INFO     | [32m  OK  [0m Loaded 60 candidates
+2026-04-06 11:13:00,870 | INFO     |        
+2026-04-06 11:13:00,870 | INFO     |        Running cis-element analysis...
+2026-04-06 11:13:00,889 | INFO     | [32m  OK  [0m Hard filter: 60 → 2 candidates (58 removed: missing TATA/CAAT or GC out of 40–60%)
+2026-04-06 11:13:00,889 | INFO     |        
+2026-04-06 11:13:04,218 | INFO     |        Loading DNABERT-2 (zhihan1996/DNABERT-2-117M)...
+2026-04-06 11:13:04,218 | INFO     |        First run: downloads ~500 MB. This is normal. Please wait.
+2026-04-06 11:13:07,605 | INFO     | [33m  WARN[0m DNABERT-2 failed to load: Tensor on device meta is not on the expected device cpu!
+2026-04-06 11:13:07,606 | INFO     | [33m  WARN[0m Continuing with cis-element scores only.
+2026-04-06 11:13:07,606 | INFO     | [33m  WARN[0m DNABERT-2 unavailable — using k-mer frequency similarity instead.
+2026-04-06 11:13:07,607 | INFO     | [33m  WARN[0m Computing 4-mer frequency profiles for all candidates...
+2026-04-06 11:13:07,626 | INFO     | [32m  OK  [0m k-mer similarity computed (range: 0.446 – 0.508).
+2026-04-06 11:13:07,626 | INFO     |        
+2026-04-06 11:13:07,626 | INFO     |        Computing novelty and internal diversity...
+2026-04-06 11:13:07,682 | INFO     |        Novelty range: 0.583 – 0.583 (higher = more different from 35S)
+2026-04-06 11:13:08,158 | INFO     |        Internal diversity range: 0.565 – 0.565
+2026-04-06 11:13:08,159 | INFO     |        
+2026-04-06 11:13:08,159 | INFO     |        Computing Pareto front across 3 objectives:
+2026-04-06 11:13:08,159 | INFO     |          [1] strength  = weighted cis-element score
+2026-04-06 11:13:08,159 | INFO     |          [2] novelty   = edit distance from 2×35S
+2026-04-06 11:13:08,159 | INFO     |          [3] diversity = mean edit distance to other candidates
+2026-04-06 11:13:08,160 | INFO     | [32m  OK  [0m Pareto front 1 (best): 2 candidates
+2026-04-06 11:13:08,160 | INFO     |        Remaining candidates spread across 1 fronts
+2026-04-06 11:13:08,165 | INFO     |        
+2026-04-06 11:13:08,165 | INFO     | [32m  OK  [0m Null control check passed — no null-seed candidates in top 10.
+2026-04-06 11:13:08,168 | INFO     | [32m  OK  [0m Full scored table → outputs/all_candidates_scored.csv
+2026-04-06 11:13:08,168 | INFO     | [33m  WARN[0m DNABERT-2 unavailable: top-3 will prefer candidates from
+2026-04-06 11:13:08,168 | INFO     | [33m  WARN[0m real seeds (35S or endogenous). Null-seed candidates are
+2026-04-06 11:13:08,168 | INFO     | [33m  WARN[0m shown in the ranking CSV but excluded from top-3 FASTA.
+2026-04-06 11:13:08,169 | INFO     |        
+2026-04-06 11:13:08,169 | INFO     |        ==============================================================
+2026-04-06 11:13:08,169 | INFO     |          YOUR TOP 3 SYNTHETIC PROMOTER CANDIDATES
+2026-04-06 11:13:08,169 | INFO     |        ==============================================================
+2026-04-06 11:13:08,170 | INFO     |        
+2026-04-06 11:13:08,170 | INFO     |          Rank 1:  seed_35S_core_v05
+2026-04-06 11:13:08,170 | INFO     |            Pareto front:         1
+2026-04-06 11:13:08,170 | INFO     |            Composite score:     0.75
+2026-04-06 11:13:08,170 | INFO     |            Weighted strength:   5  (higher = stronger)
+2026-04-06 11:13:08,170 | INFO     |            Novelty vs 35S:     0.5833  (higher = more different)
+2026-04-06 11:13:08,170 | INFO     |            Internal diversity:  0.565  (higher = more unique)
+2026-04-06 11:13:08,170 | INFO     |            GC content:          45.0%
+2026-04-06 11:13:08,170 | INFO     |            as-1 elements:       0  [5x weight]
+2026-04-06 11:13:08,170 | INFO     |            GCN4 motif:         0  [5x weight]
+2026-04-06 11:13:08,170 | INFO     |            ocs-like elements:   0  [3x weight]
+2026-04-06 11:13:08,170 | INFO     |            TATA box:            1
+2026-04-06 11:13:08,170 | INFO     |            CAAT box:            2
+2026-04-06 11:13:08,170 | INFO     |            G-box:               0
+2026-04-06 11:13:08,170 | INFO     |            DNABERT-2 sim:       0.5081  (vs 2×35S)
+2026-04-06 11:13:08,170 | INFO     |            Sequence (800 bp):
+2026-04-06 11:13:08,170 | INFO     |            GAAAATTTGGAGTAAAAGTTTTCCTAAGTGATAGGTAGTCCTCAAATGCATTGCATTTAGAGACTACTTATCACTTAGGA...
+2026-04-06 11:13:08,170 | INFO     |        
+2026-04-06 11:13:08,170 | INFO     |          Rank 2:  seed_NbEndogenous_v13
+2026-04-06 11:13:08,171 | INFO     |            Pareto front:         1
+2026-04-06 11:13:08,171 | INFO     |            Composite score:     0.25
+2026-04-06 11:13:08,171 | INFO     |            Weighted strength:   4  (higher = stronger)
+2026-04-06 11:13:08,171 | INFO     |            Novelty vs 35S:     0.5833  (higher = more different)
+2026-04-06 11:13:08,171 | INFO     |            Internal diversity:  0.565  (higher = more unique)
+2026-04-06 11:13:08,171 | INFO     |            GC content:          44.0%
+2026-04-06 11:13:08,171 | INFO     |            as-1 elements:       0  [5x weight]
+2026-04-06 11:13:08,171 | INFO     |            GCN4 motif:         0  [5x weight]
+2026-04-06 11:13:08,171 | INFO     |            ocs-like elements:   0  [3x weight]
+2026-04-06 11:13:08,171 | INFO     |            TATA box:            3
+2026-04-06 11:13:08,171 | INFO     |            CAAT box:            1
+2026-04-06 11:13:08,171 | INFO     |            G-box:               0
+2026-04-06 11:13:08,171 | INFO     |            DNABERT-2 sim:       0.4461  (vs 2×35S)
+2026-04-06 11:13:08,171 | INFO     |            Sequence (800 bp):
+2026-04-06 11:13:08,171 | INFO     |            TTCCTGCTACGACGCGTACAGCTTGTTCGCATCCTTTTACTCGGCCTTCTTCATAGTCCGACATAATTTCCTCCTATTTT...
+2026-04-06 11:13:08,171 | INFO     | [32m  OK  [0m 
+Top 3 FASTA → outputs/top3_candidates.fasta
+2026-04-06 11:13:08,172 | INFO     | [32m  OK  [0m Top-10 ranking table → outputs/ranking_table.csv
+2026-04-06 11:13:08,172 | INFO     |        
+2026-04-06 11:13:08,172 | INFO     |        NEXT STEPS:
+2026-04-06 11:13:08,173 | INFO     |          1. Open outputs/top3_candidates.fasta
+2026-04-06 11:13:08,173 | INFO     |          2. Go to: https://bioinformatics.psb.ugent.be/webtools/plantcare
+2026-04-06 11:13:08,173 | INFO     |          3. Paste each sequence (one at a time) and run analysis
+2026-04-06 11:13:08,173 | INFO     |          4. Check each result for TATA box, CAAT box, as-1 elements
+2026-04-06 11:13:08,173 | INFO     |          5. Discard any candidate where PlantCARE shows NO TATA box
+2026-04-06 11:13:08,173 | INFO     |          6. Remaining candidates go to AlphaGenome validation
+2026-04-06 11:13:08,173 | INFO     | 
+==============================================================
+2026-04-06 11:13:08,173 | INFO     |   PIPELINE COMPLETE
+2026-04-06 11:13:08,173 | INFO     | ==============================================================
+2026-04-06 11:13:08,173 | INFO     | 
+  Top 3 candidates:   outputs/top3_candidates.fasta
+2026-04-06 11:13:08,173 | INFO     |   Full ranking:       outputs/ranking_table.csv
+2026-04-06 11:13:08,173 | INFO     |   All scored:         outputs/all_candidates_scored.csv
+2026-04-06 11:13:08,173 | INFO     |   Full log:           logs/run.log
+2026-04-06 11:13:08,173 | INFO     | 
+  Take top3_candidates.fasta to PlantCARE for final validation.

@@ -1,0 +1,3 @@
+,seed,length_bp,gc_pct,total_elements,weighted_score,TATA_box,CAAT_box,GCN4_motif,ocs_like,as1_element,G_box,W_box,dnabert2_sim,novelty_35s,internal_div,pareto_front,composite_score
+seed_35S_core_v05,seed_35S_core,800,45.0,4,5,1,2,0,0,0,0,0,0.5081,0.5833,0.565,1,0.75
+seed_NbEndogenous_v13,seed_NbEndogenous,800,44.0,4,4,3,1,0,0,0,0,0,0.4461,0.5833,0.565,1,0.25
