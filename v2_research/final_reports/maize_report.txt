@@ -1,0 +1,93 @@
+=================================================================
+  FINAL SPECIES REPORT: Zea mays
+=================================================================
+  Species key:     maize
+  Type:            monocot
+  Iterations run:  8
+  Models used:     evo2+d3lm
+
+-----------------------------------------------------------------
+  1. BEST PROMOTER SEQUENCE
+-----------------------------------------------------------------
+  Candidate ID:    mut_v01
+  Source:          iter1_scored.csv
+  Length:          800 bp
+  Composite score: 0.7665
+  Pareto front:    1
+
+  Sequence (FASTA):
+  >best_promoter_maize_score0.766
+  GTCTTTACATATCTCTCTCTCCCTCCCTCTATCTCTCAACAATCTCTCTGTCTCTCGCATATAAGGGGTGAGTCTGTTTG
+  TTTGTGAGGGTGGGGATGTGGGGAGATGATGGGGAGGGAATGCTGCAGGCATGCTCTTGCAGGTACCCAGTCTGGGGTTC
+  CAAGGATATGGTGCATCAGATGGTGTTTTTAGTTGTTTGGTTTTGAGATAGTTTATTTATATTTTTATTCGCGTTAGCTC
+  CTTGCTGGATTCAGAGAGAGACGATCCGACAAGTACGCCCTAAGTAGGCCCTCAGCGTGTTGTATGTGACAGTTATGTAC
+  CATTTAAAGCCACCGATTTCGTCGGTCCTTATACCCATTAGAGACACCTAAAAATCTGATCGTTGCGACTGATCACCTTC
+  GTTGCATAGCACTCGAACGTTCGGCATTCCTGAGAGATCCAGATTACTCTGTCCGATACGGTTTCGTCATATTTAAAGAG
+  TAATTACACAACGCCGAGACAAGGTACCGTGGAAGCCGAGACAACCCCTTTATAGGGACCGTACCTAGTGTATGCAAAAG
+  GGCGCGTGCCCAGTTTCTCTTGTGAAATGAGATAGGAGCCTTGCATTTGTCCACGAACCTGCTAAGCTACAGCCCCTGGA
+  ATTTTAAAGACAGCCTCTCTAAGAACAGATTGCACTGGCTCCATTGAAAACCCCGACATTTCGGTCATAAGCGCGCCAAT
+  CGGCATAAAATCCCACGAAGTAGGCTTTGTCAAAATTGCGAAGCATATAAATTTGCTTTTATCTATCGTAAAAGGGAGCT
+
+-----------------------------------------------------------------
+  2. PREDICTED PROMOTER STRENGTH
+-----------------------------------------------------------------
+  Weighted cis-score:   49
+  GC content:           46.0%
+  Expression score:     0.9839
+  Assessment:           WEAK
+
+-----------------------------------------------------------------
+  3. SILENCING RISK
+-----------------------------------------------------------------
+  Overall risk:         0.4061 (HIGH)
+  PTGS risk:            ELEVATED
+  TGS risk:             ELEVATED
+
+-----------------------------------------------------------------
+  4. NOVELTY vs KNOWN PROMOTERS
+-----------------------------------------------------------------
+  Novelty vs CaMV 35S:  0.728
+  Internal diversity:   0.327
+
+  Comparison to known promoters:
+    vs Maize_Ubiquitin      identity: 88.9%  novelty: 11.1%  (endogenous_monocot)  <-- most similar
+    vs CaMV_35S             identity: 45.6%  novelty: 54.4%  (viral)  
+    vs OsActin1             identity: 42.1%  novelty: 57.9%  (endogenous_monocot)  
+    vs AtUBQ10              identity: 37.4%  novelty: 62.6%  (endogenous_dicot)  
+
+-----------------------------------------------------------------
+  5. GENOMIC INSERTION SITE
+-----------------------------------------------------------------
+  Safe harbor score:    0.7000
+  Assessment:           MODERATE — some risk factors
+  Note:                 Genome data not loaded — score is placeholder
+
+-----------------------------------------------------------------
+  6. RANKING vs KNOWN PROMOTERS
+-----------------------------------------------------------------
+  Promoter                     Our Score      Assessment
+  ------------------------- ------------ ---------------
+  THIS CANDIDATE                   0.766                
+  Maize_Ubiquitin                  0.700          BETTER
+  CaMV_35S                         0.600          BETTER
+  OsActin1                         0.700          BETTER
+  AtUBQ10                          0.600          BETTER
+
+-----------------------------------------------------------------
+  7. CONFIDENCE LEVEL
+-----------------------------------------------------------------
+  Overall confidence:   HIGH (6/7 axes passing)
+  Axis breakdown:
+    strength                  PASS
+    silencing_low             FAIL
+    novelty                   PASS
+    diversity                 PASS
+    embedding                 PASS
+    safe_harbor               PASS
+    gc_range                  PASS
+
+=================================================================
+  VERDICT: PROCEED TO WET-LAB
+  Best composite score: 0.7665
+  Strength: 49 | Silencing: HIGH | Novelty: 0.728 | Confidence: HIGH
+=================================================================

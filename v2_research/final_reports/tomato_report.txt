@@ -1,0 +1,93 @@
+=================================================================
+  FINAL SPECIES REPORT: Solanum lycopersicum
+=================================================================
+  Species key:     tomato
+  Type:            dicot
+  Iterations run:  8
+  Models used:     evo2+d3lm
+
+-----------------------------------------------------------------
+  1. BEST PROMOTER SEQUENCE
+-----------------------------------------------------------------
+  Candidate ID:    mut_v02
+  Source:          iter5_scored.csv
+  Length:          800 bp
+  Composite score: 0.8959
+  Pareto front:    1
+
+  Sequence (FASTA):
+  >best_promoter_tomato_score0.896
+  TGACGTAAAGGACCCCGAGTGGAATGTAAAAAGAATGGACGCAAGTCCTTCCAGAACTTTCCAGACTTTCCAAGCGCACG
+  ATCTTCAAATCAATTACTCTATGGGGTCTAGAAGGTGTTTGCGTACTTCAGCGAGCCGCAGTCCAAATATCAGTAGCCAC
+  TGTATCATTCCGTCAATGGTGACTTTAAAGCTTTCTATTAATATTGTTTATTTATACGTTCAATCCACCATATTACCCCT
+  ATAGTCATACATAGCGTTAAGCTATCTCCGTTGACAGGGGGTCCCGTACAACCATAGAAATTCGGAGTTACCACCGTACG
+  GGTCAGTTTAATATGCCATGTAACAAAACTTCCCCGTCTGAATATATATTGTAACCCATTTAACTGCTCTTTTCCCCCAA
+  CAATATCCAAAGTCGCTTTTTCATCCAACAAATGCAGTGACACGTGGTGTAAAAACAATTTAGTATCATTCCTTTCTCTG
+  AATATGATCCTAGTCGATTCTGACGTCAGGACTTTTAGCGATCGCTTCAAAAAAGATCATTTAGGCAATTAAATTTCTAG
+  TGACGTCAAGAGCTAATACTCAAGAAGGTCACTCTGGTCCTATGAAACCAAATTATTCCATGACGTAAAGAGTACTTTGA
+  GCTTTGCACATTCTGCCAACAGCAATATTAGTAAACTAGCTATAAATTTCGCATTACTAGTCTTATACCATTTAGCCAAT
+  GTCACATCGCACTGCTGACGTCAAAATAAACGATCTTATGAGCTATATATAAAAATTTTAGTATATTAGTAGTAATTTAA
+
+-----------------------------------------------------------------
+  2. PREDICTED PROMOTER STRENGTH
+-----------------------------------------------------------------
+  Weighted cis-score:   150
+  GC content:           38.1%
+  Expression score:     0.9977
+  Assessment:           STRONG (top 10% of candidates)
+
+-----------------------------------------------------------------
+  3. SILENCING RISK
+-----------------------------------------------------------------
+  Overall risk:         0.1686 (LOW)
+  PTGS risk:            LOW
+  TGS risk:             LOW
+
+-----------------------------------------------------------------
+  4. NOVELTY vs KNOWN PROMOTERS
+-----------------------------------------------------------------
+  Novelty vs CaMV 35S:  0.477
+  Internal diversity:   0.501
+
+  Comparison to known promoters:
+    vs CaMV_35S             identity: 76.5%  novelty: 23.5%  (viral)  <-- most similar
+    vs Maize_Ubiquitin      identity: 40.4%  novelty: 59.6%  (endogenous_monocot)  
+    vs OsActin1             identity: 39.5%  novelty: 60.5%  (endogenous_monocot)  
+    vs AtUBQ10              identity: 39.1%  novelty: 60.9%  (endogenous_dicot)  
+
+-----------------------------------------------------------------
+  5. GENOMIC INSERTION SITE
+-----------------------------------------------------------------
+  Safe harbor score:    0.1000
+  Assessment:           UNSAFE — high risk of position effects
+  Note:                 Genome data not loaded — score is placeholder
+
+-----------------------------------------------------------------
+  6. RANKING vs KNOWN PROMOTERS
+-----------------------------------------------------------------
+  Promoter                     Our Score      Assessment
+  ------------------------- ------------ ---------------
+  THIS CANDIDATE                   0.896                
+  CaMV_35S                         0.600          BETTER
+  Maize_Ubiquitin                  0.700          BETTER
+  OsActin1                         0.700          BETTER
+  AtUBQ10                          0.600          BETTER
+
+-----------------------------------------------------------------
+  7. CONFIDENCE LEVEL
+-----------------------------------------------------------------
+  Overall confidence:   HIGH (6/7 axes passing)
+  Axis breakdown:
+    strength                  PASS
+    silencing_low             PASS
+    novelty                   PASS
+    diversity                 PASS
+    embedding                 PASS
+    safe_harbor               FAIL
+    gc_range                  PASS
+
+=================================================================
+  VERDICT: PROCEED TO WET-LAB
+  Best composite score: 0.8959
+  Strength: 150 | Silencing: LOW | Novelty: 0.477 | Confidence: HIGH
+=================================================================
