@@ -1,0 +1,79 @@
+# Species Configuration: Glycine max (Soybean)
+
+species:
+  name: "Glycine max"
+  common_name: "Soybean"
+  taxonomy:
+    family: "Fabaceae"
+    order: "Fabales"
+    class: "Magnoliopsida"
+  type: "dicot"
+  genome_size_mb: 1100
+  chromosome_number: 20
+  ploidy: "diploid (paleopolyploid)"
+  gc_content: 35.0
+
+genome:
+  reference: "Wm82_a4_v1"
+  source: "Phytozome / SoyBase"
+  annotation: "Wm82_a4_v1_genes.gff3"
+
+standard_promoters:
+  - name: "CaMV_35S"
+    type: "viral"
+    strength: "high"
+  - name: "GmUbi"
+    gene: "Glyma.01G228500"
+    type: "endogenous"
+    strength: "high"
+  - name: "Glycinin"
+    type: "endogenous"
+    strength: "high"
+    tissue: "seed"
+  - name: "Beta_conglycinin"
+    type: "endogenous"
+    strength: "high"
+    tissue: "seed"
+
+cis_element_weights:
+  as1_element: 5
+  GCN4_motif: 5    # Seed-specific — critical for soybean
+  ocs_like: 3
+  TATA_box: 1
+  CAAT_box: 1
+  G_box: 2
+  W_box: 2
+  ABRE: 2
+  MBS: 1
+  DOF_site: 1
+  IME_intron: 0
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 30
+  max_gc_pct: 50
+  max_tata_boxes: 8
+  require_IME_intron: false
+
+safe_harbors:
+  known_sites: []
+  epigenome_data: "moderate"
+
+expression:
+  agrobacterium_compatible: true
+  transformation_method: "cotyledonary node"
+  transient_expression: false
+  stable_transformation: true
+  generation_time: "3-4 months"
+
+biomanufacturing:
+  primary_use: "Seed-based recombinant protein, antibody production"
+  typical_yield_tsp: "0.1-5% TSP (seed)"
+  advantages:
+    - "High seed protein content — natural protein production system"
+    - "SoybeanGEM metabolic model available"
+    - "Seed storage = stable protein without cold chain"
+  limitations:
+    - "Genotype-dependent transformation efficiency"
+    - "Paleopolyploid — duplicated regulatory elements"

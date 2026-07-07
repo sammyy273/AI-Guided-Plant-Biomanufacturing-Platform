@@ -1,0 +1,80 @@
+# Species Configuration: Oryza sativa (Rice)
+
+species:
+  name: "Oryza sativa"
+  common_name: "Rice"
+  taxonomy:
+    family: "Poaceae"
+    order: "Poales"
+    class: "Liliopsida"
+  type: "monocot"
+  genome_size_mb: 430
+  chromosome_number: 12
+  ploidy: "diploid"
+  gc_content: 43.0
+
+genome:
+  reference: "IRGSP-1.0"
+  source: "RAP-DB / MSU Rice Genome Annotation"
+  fasta: "data/species_genomes/rice/IRGSP-1.0.fa.gz"
+  annotation: "data/species_genomes/rice/IRGSP-1.0_genes.gff3.gz"
+  # Download: https://rapdb.dna.affrc.go.jp/download/irgsp1.html
+  # Or Ensembl Plants: https://plants.ensembl.org/Oryza_sativa/Info/Index
+
+standard_promoters:
+  - name: "OsActin1"
+    gene: "Os03g5088500"
+    type: "endogenous"
+    strength: "very_high"
+    notes: "Standard monocot constitutive promoter"
+  - name: "OsUbi"
+    type: "endogenous"
+    strength: "high"
+  - name: "ZmUbi1"
+    type: "heterologous"
+    strength: "high"
+    notes: "Maize Ubi1 works in rice"
+
+cis_element_weights:
+  DOF_site: 5
+  GCN4_motif: 5
+  ocs_like: 4
+  IME_intron: 5
+  as1_element: 1
+  TATA_box: 1
+  CAAT_box: 1
+  G_box: 1
+  W_box: 2
+  ABRE: 2
+  MBS: 1
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 38
+  max_gc_pct: 58
+  max_tata_boxes: 8
+  require_IME_intron: true
+
+safe_harbors:
+  known_sites: []
+  epigenome_data: "moderate"
+
+expression:
+  agrobacterium_compatible: true
+  transformation_method: "callus-mediated"
+  transient_expression: false
+  stable_transformation: true
+  generation_time: "3-4 months"
+
+biomanufacturing:
+  primary_use: "Grain-based protein production, nutraceuticals"
+  typical_yield_tsp: "0.1-5% TSP"
+  advantages:
+    - "Smallest monocot genome — best annotated grass"
+    - "Routine transformation protocols"
+    - "RiceGEM metabolic model (partial)"
+    - "Endosperm expression for grain bioreactor"
+  limitations:
+    - "Monocot-specific promoter requirements"
+    - "Seed-specific expression needs GCN4-driven promoters"

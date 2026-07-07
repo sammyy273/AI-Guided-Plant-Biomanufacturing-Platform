@@ -1,0 +1,81 @@
+# Species Configuration: Nicotiana benthamiana
+# The gold standard for transient plant biomanufacturing
+
+species:
+  name: "Nicotiana benthamiana"
+  common_name: "Lab tobacco"
+  taxonomy:
+    family: "Solanaceae"
+    order: "Solanales"
+    class: "Magnoliopsida"
+  type: "dicot"
+  genome_size_mb: 3100
+  chromosome_number: 19
+  ploidy: "allotetraploid"
+  gc_content: 38.0
+
+genome:
+  reference: "NbEVB_v1.0"
+  source: "NCBI"
+  fasta: "data/species_genomes/nbenthamiana/NbEVB_v1.0.fa.gz"
+  annotation: "data/species_genomes/nbenthamiana/NbEVB_v1.0_genes.gff3.gz"
+  # Download: https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_028589825.1/
+
+standard_promoters:
+  - name: "2x_CaMV_35S"
+    type: "viral"
+    strength: "very_high"
+    notes: "Industry standard for transient expression"
+  - name: "NbUBI"
+    type: "endogenous"
+    strength: "high"
+    notes: "Endogenous ubiquitin promoter"
+  - name: "NbRbcS"
+    type: "endogenous"
+    strength: "high"
+    notes: "Ribulose bisphosphate carboxylase — leaf-specific"
+
+cis_element_weights:
+  as1_element: 5    # TGA/bZIP — primary 35S strength driver
+  GCN4_motif: 5     # Seed/endosperm expression
+  ocs_like: 3       # Octopine synthase — secondary strength
+  TATA_box: 1       # Required but not strength-determining
+  CAAT_box: 1       # Required but not strength-determining
+  G_box: 2          # GBF binding — light-responsive
+  W_box: 2          # WRKY binding — pathogen-responsive
+  ABRE: 2           # ABA-responsive
+  MBS: 1            # MYB binding
+  DOF_site: 1       # DOF TFs (less relevant in dicots)
+  IME_intron: 0     # Not needed for dicots
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 35
+  max_gc_pct: 55
+  max_tata_boxes: 8
+  require_IME_intron: false
+
+safe_harbors:
+  known_sites: []
+  notes: "No published safe harbors — use computational prediction"
+  epigenome_data: "limited"
+  fallback: "Use N. tabacum homology for chromatin state prediction"
+
+expression:
+  agrobacterium_compatible: true
+  transformation_method: "agroinfiltration"
+  transient_expression: true
+  days_post_infiltration: "2-5 dpi peak expression"
+  silencing_onset: "6+ dpi (post-transcriptional)"
+
+biomanufacturing:
+  primary_use: "Transient recombinant protein production"
+  typical_yield_tsp: "1-5% TSP (total soluble protein)"
+  advantages:
+    - "Fastest transient expression system"
+    - "High leaf biomass"
+    - "Compatible with viral vectors (TMV, TRV, PVX)"
+  limitations:
+    - "Not a food crop (regulatory advantage for pharma)"
+    - "Promoter methylation after 6 dpi"

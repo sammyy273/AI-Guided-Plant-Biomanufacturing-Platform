@@ -1,0 +1,79 @@
+# Species Configuration: Triticum aestivum (Wheat)
+# Hexaploid — complex regulatory landscape
+# Uses same monocot design rules as maize
+
+species:
+  name: "Triticum aestivum"
+  common_name: "Wheat"
+  taxonomy:
+    family: "Poaceae"
+    order: "Poales"
+    class: "Liliopsida"
+  type: "monocot"
+  genome_size_mb: 15000
+  chromosome_number: 42
+  ploidy: "hexaploid (ABD genomes)"
+  gc_content: 46.0
+
+genome:
+  reference: "IWGSC_RefSeq_v2.1"
+  source: "URGI/WheatIS"
+  annotation: "IWGSC_v2.1_HC_genes.gff3"
+
+standard_promoters:
+  - name: "ZmUbi1"
+    type: "heterologous"
+    strength: "high"
+    notes: "Maize Ubi1 works well in wheat"
+  - name: "TaUbi3"
+    gene: "TraesCS7A02G374300"
+    type: "endogenous"
+    strength: "high"
+  - name: "TaActin"
+    type: "endogenous"
+    strength: "moderate"
+
+cis_element_weights:
+  DOF_site: 5
+  GCN4_motif: 5
+  ocs_like: 4
+  IME_intron: 5
+  as1_element: 1
+  TATA_box: 1
+  CAAT_box: 1
+  G_box: 1
+  W_box: 2
+  ABRE: 2
+  MBS: 1
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 40
+  max_gc_pct: 60
+  max_tata_boxes: 8
+  require_IME_intron: true
+
+safe_harbors:
+  known_sites: []
+  epigenome_data: "limited"
+  notes: "15 Gb genome makes safe harbor prediction compute-intensive"
+
+expression:
+  agrobacterium_compatible: true
+  transformation_method: "immature embryo / biolistics"
+  transient_expression: false
+  stable_transformation: true
+  generation_time: "4-6 months"
+  silencing_risk: "high"   # Hexaploid = more silencing pathways
+
+biomanufacturing:
+  primary_use: "Seed-based protein production"
+  typical_yield_tsp: "0.1-5% TSP"
+  advantages:
+    - "Largest cultivated area of any crop"
+    - "Seed storage proteins are well-characterised"
+  limitations:
+    - "Huge genome — complex regulatory landscape"
+    - "High gene silencing risk (hexaploid)"
+    - "Biolistics often preferred over Agrobacterium"

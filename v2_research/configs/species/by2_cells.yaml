@@ -1,0 +1,72 @@
+# Species Configuration: BY-2 Cells (N. tabacum Bright Yellow-2)
+# Fastest growing plant cell culture — high-throughput promoter screening
+
+species:
+  name: "Nicotiana tabacum cv. Bright Yellow-2"
+  common_name: "BY-2 cell culture"
+  taxonomy:
+    family: "Solanaceae"
+    order: "Solanales"
+  type: "dicot"
+  genome_size_mb: 4500
+  gc_content: 39.0
+  cell_type: "suspension_culture"
+
+genome:
+  reference: "K326_v3.0"   # Uses N. tabacum reference
+  notes: "BY-2 derived from N. tabacum cv. Bright Yellow 2"
+
+standard_promoters:
+  - name: "2x_CaMV_35S"
+    type: "viral"
+    strength: "very_high"
+  - name: "CaMV_35S"
+    type: "viral"
+    strength: "high"
+
+cis_element_weights:
+  as1_element: 5
+  GCN4_motif: 3
+  ocs_like: 3
+  TATA_box: 1
+  CAAT_box: 1
+  G_box: 2
+  W_box: 2
+  ABRE: 2
+  MBS: 1
+  DOF_site: 1
+  IME_intron: 0
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 35
+  max_gc_pct: 55
+  max_tata_boxes: 8
+  require_IME_intron: false
+
+safe_harbors:
+  known_sites: []
+  notes: "Suspension culture — integration is random (no position control)"
+  integration_method: "random (Agrobacterium or PEG-mediated)"
+
+expression:
+  agrobacterium_compatible: true
+  transformation_method: "electroporation or PEG-mediated protoplast"
+  transient_expression: true
+  generation_time: "14-16 hours"
+
+biomanufacturing:
+  primary_use: "High-throughput promoter screening, recombinant protein"
+  typical_yield_tsp: "0.5-3% TSP"
+  advantages:
+    - "Fastest growth of any plant cell culture"
+    - "Scalable to bioreactor volumes"
+    - "Rapid promoter testing (days, not weeks)"
+    - "Controlled environment — no seasonal variation"
+  limitations:
+    - "No tissue differentiation — tissue-specific promoters don't work"
+    - "Higher silencing risk than whole plants"
+    - "Promoter methylation in long-term culture"
+    - "Random integration — position effects"
+  screening_use: "Best platform for rapid testing before whole-plant validation"

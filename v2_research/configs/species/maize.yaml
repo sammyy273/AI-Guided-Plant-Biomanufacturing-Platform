@@ -1,0 +1,92 @@
+# Species Configuration: Zea mays (Maize)
+# KEY: Monocot — uses DIFFERENT promoter rules than dicots
+# 35S does NOT work well — must use ZmUbi1 or other monocot promoters
+
+species:
+  name: "Zea mays"
+  common_name: "Maize"
+  taxonomy:
+    family: "Poaceae"
+    order: "Poales"
+    class: "Liliopsida"
+  type: "monocot"
+  genome_size_mb: 2300
+  chromosome_number: 10
+  ploidy: "diploid"
+  gc_content: 47.0
+
+genome:
+  reference: "B73_RefGen_v5"
+  source: "MaizeGDB"
+  annotation: "B73_RefGen_v5_genes.gff3"
+
+standard_promoters:
+  - name: "ZmUbi1"
+    gene: "AC196675.3_FGT005"
+    type: "endogenous"
+    strength: "very_high"
+    notes: "Standard monocot constitutive promoter — NOT 35S"
+  - name: "ZmRbcS"
+    gene: "GRMZM2G049478"
+    type: "endogenous"
+    strength: "very_high"
+    tissue: "leaf"
+  - name: "CaMV_35S"
+    type: "viral"
+    strength: "low_to_moderate"
+    notes: "35S works POORLY in maize — avoid for high expression"
+
+cis_element_weights:
+  DOF_site: 5      # DOF TFs — KEY in grasses (replaces as-1 role)
+  GCN4_motif: 5    # Endosperm expression
+  ocs_like: 4      # More relevant in monocots
+  IME_intron: 5    # Intron-mediated enhancement — CRITICAL for monocots
+  as1_element: 1   # Less relevant in monocots
+  TATA_box: 1
+  CAAT_box: 1
+  G_box: 1         # Less relevant in grasses
+  W_box: 2         # WRKY — conserved across dicots/monocots
+  ABRE: 2
+  MBS: 1
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 40
+  max_gc_pct: 60
+  max_tata_boxes: 8
+  require_IME_intron: true   # CRITICAL DIFFERENCE: monocots need IME
+
+safe_harbors:
+  known_sites:
+    - locus: "ZmUbi1_region"
+      chromosome: "unknown"
+      notes: "Natural strong expression context — good insertion site"
+  epigenome_data: "moderate"
+  notes: "MaizeGDB has some chromatin data"
+
+expression:
+  agrobacterium_compatible: true
+  transformation_method: "immature embryo"
+  transient_expression: false
+  stable_transformation: true
+  generation_time: "4-6 months"
+
+biomanufacturing:
+  primary_use: "Seed-based protein production, animal feed enzymes"
+  typical_yield_tsp: "0.1-10% TSP (seed-specific)"
+  advantages:
+    - "Huge biomass — highest commercial scale"
+    - "Seed bioreactor — stable protein storage"
+    - "Well-established transformation protocols"
+  limitations:
+    - "35S promoter is weak in maize — need monocot-specific design"
+    - "Slow transformation cycle"
+    - "Regulatory complexity (GMO regulations)"
+
+monocot_specific:
+  requires_IME_intron: true
+  preferred_elements: ["DOF_site", "ocs_like", "GCN4_motif"]
+  avoid_elements: ["as1_element"]
+  gc_content_note: "Higher GC content expected (40-60%)"
+  intron_position: "First intron downstream of 5' UTR, within first 1 kb"

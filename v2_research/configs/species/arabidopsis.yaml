@@ -1,0 +1,99 @@
+# Species Configuration: Arabidopsis thaliana
+# Model organism — best annotated plant genome
+
+species:
+  name: "Arabidopsis thaliana"
+  common_name: "Thale cress"
+  taxonomy:
+    family: "Brassicaceae"
+    order: "Brassicales"
+    class: "Magnoliopsida"
+  type: "dicot"
+  genome_size_mb: 135
+  chromosome_number: 5
+  ploidy: "diploid"
+  gc_content: 36.0
+
+genome:
+  reference: "TAIR10"
+  source: "TAIR"
+  fasta: "data/species_genomes/arabidopsis/TAIR10.fa.gz"
+  annotation: "data/species_genomes/arabidopsis/TAIR10_GFF3_genes.gff.gz"
+  # Download: wget https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_chromosome_files/TAIR10_chromosome_files.tar.gz
+  # Or from Ensembl Plants: https://plants.ensembl.org/Arabidopsis_thaliana/Info/Index
+
+standard_promoters:
+  - name: "CaMV_35S"
+    type: "viral"
+    strength: "high"
+  - name: "AtUBQ10"
+    gene: "AT1G24000"
+    type: "endogenous"
+    strength: "high"
+  - name: "AtACT2"
+    gene: "AT3G18780"
+    type: "endogenous"
+    strength: "high"
+  - name: "AtRBCS"
+    gene: "AT1G67090"
+    type: "endogenous"
+    strength: "very_high"
+    tissue: "leaf"
+
+cis_element_weights:
+  as1_element: 5
+  GCN4_motif: 3
+  ocs_like: 2
+  TATA_box: 1
+  CAAT_box: 1
+  G_box: 2
+  W_box: 2
+  ABRE: 2
+  MBS: 1
+  DOF_site: 1
+  IME_intron: 0
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 30
+  max_gc_pct: 50
+  max_tata_boxes: 8
+  require_IME_intron: false
+
+safe_harbors:
+  known_sites:
+    - locus: "ATS1"
+      gene: "AT1G09570"
+      chromosome: 1
+      position: "3,147,000"
+      evidence: "Well-characterised, stable expression"
+    - locus: "RPS5a"
+      gene: "AT3G11940"
+      chromosome: 3
+      position: "3,870,000"
+      evidence: "Strong constitutive, gene trap compatible"
+  epigenome_data: "extensive"
+  data_sources:
+    - "ATAC-seq: ENCODE plant data"
+    - "ChIP-seq: H3K4me3, H3K27ac, H3K9me3"
+    - "Whole-genome bisulfite sequencing (methylome)"
+
+expression:
+  agrobacterium_compatible: true
+  transformation_method: "floral dip"
+  transient_expression: false
+  stable_transformation: true
+  generation_time: "6-8 weeks seed to seed"
+
+biomanufacturing:
+  primary_use: "Research — gene function, promoter validation"
+  typical_yield_tsp: "0.1-1% TSP"
+  advantages:
+    - "Best annotated plant genome"
+    - "Full epigenome data available"
+    - "Trivial transformation (floral dip)"
+    - "Short generation time"
+  limitations:
+    - "Small plant — low total biomass"
+    - "Not suitable for commercial protein production"

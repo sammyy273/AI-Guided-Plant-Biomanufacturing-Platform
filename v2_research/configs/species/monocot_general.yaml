@@ -1,0 +1,35 @@
+# Species Configuration: Monocot General
+# Generic settings for monocot species without a specific config
+# KEY DIFFERENCE from dicots: requires IME intron, different TF weights
+
+species:
+  name: "Monocot general"
+  type: "monocot"
+  gc_content: 45.0
+
+cis_element_weights:
+  DOF_site: 5       # KEY in grasses
+  GCN4_motif: 5     # Endosperm expression
+  ocs_like: 4       # More relevant in monocots
+  IME_intron: 5     # CRITICAL for monocot expression
+  as1_element: 1    # Less relevant
+  TATA_box: 1
+  CAAT_box: 1
+  G_box: 1
+  W_box: 2
+  ABRE: 2
+  MBS: 1
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 40
+  max_gc_pct: 60
+  max_tata_boxes: 8
+  require_IME_intron: true    # MONOCOT-SPECIFIC: intron needed for high expression
+
+standard_promoters:
+  - name: "ZmUbi1"
+    type: "heterologous"
+    strength: "very_high"
+    notes: "Maize ubiquitin — standard monocot constitutive promoter"

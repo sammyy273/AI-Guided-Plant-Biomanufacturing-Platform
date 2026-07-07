@@ -1,0 +1,79 @@
+# Species Configuration: Nicotiana tabacum (Tobacco)
+
+species:
+  name: "Nicotiana tabacum"
+  common_name: "Tobacco"
+  taxonomy:
+    family: "Solanaceae"
+    order: "Solanales"
+    class: "Magnoliopsida"
+  type: "dicot"
+  genome_size_mb: 4500
+  chromosome_number: 24
+  ploidy: "allotetraploid"
+  gc_content: 39.0
+
+genome:
+  reference: "K326_v3.0"
+  source: "NCBI / Solanaceae Genomics Network"
+  annotation: "Ntab-K326_AYRS_V3.0_genes.gff"
+
+standard_promoters:
+  - name: "CaMV_35S"
+    type: "viral"
+    strength: "high"
+  - name: "NtUbi"
+    type: "endogenous"
+    strength: "high"
+  - name: "NtEF1alpha"
+    type: "endogenous"
+    strength: "high"
+  - name: "NtRbcS"
+    type: "endogenous"
+    strength: "very_high"
+    tissue: "leaf"
+
+cis_element_weights:
+  as1_element: 5
+  GCN4_motif: 4
+  ocs_like: 3
+  TATA_box: 1
+  CAAT_box: 1
+  G_box: 2
+  W_box: 2
+  ABRE: 2
+  MBS: 1
+  DOF_site: 1
+  IME_intron: 0
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 35
+  max_gc_pct: 55
+  max_tata_boxes: 8
+  require_IME_intron: false
+
+safe_harbors:
+  known_sites: []
+  epigenome_data: "limited"
+  notes: "Some methylome data available"
+
+expression:
+  agrobacterium_compatible: true
+  transformation_method: "leaf disc method"
+  transient_expression: true
+  stable_transformation: true
+  generation_time: "3-4 months"
+
+biomanufacturing:
+  primary_use: "Stable transgenic protein production, molecular farming"
+  typical_yield_tsp: "0.5-5% TSP"
+  advantages:
+    - "Large leaf biomass"
+    - "Well-established stable transformation"
+    - "Same Solanaceae TF machinery as N. benthamiana"
+    - "Commercial molecular farming platform (e.g., ZMapp antibodies)"
+  limitations:
+    - "Allotetraploid — duplicated gene regulation"
+    - "Stable transformation is slower than N. benthamiana transient"

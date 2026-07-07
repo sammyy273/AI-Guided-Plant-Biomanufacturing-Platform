@@ -1,0 +1,33 @@
+# Species Configuration: Dicot General
+# Generic settings for dicot species without a specific config
+
+species:
+  name: "Dicot general"
+  type: "dicot"
+  gc_content: 38.0
+
+cis_element_weights:
+  as1_element: 5
+  GCN4_motif: 4
+  ocs_like: 3
+  TATA_box: 1
+  CAAT_box: 1
+  G_box: 2
+  W_box: 2
+  ABRE: 2
+  MBS: 1
+  DOF_site: 1
+  IME_intron: 0
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 33
+  max_gc_pct: 55
+  max_tata_boxes: 8
+  require_IME_intron: false
+
+standard_promoters:
+  - name: "CaMV_35S"
+    type: "viral"
+    strength: "high"

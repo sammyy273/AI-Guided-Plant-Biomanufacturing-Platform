@@ -1,0 +1,84 @@
+# Species Configuration: Solanum lycopersicum (Tomato)
+# Same family as N. benthamiana — high TF profile overlap
+# DeepPlantCRE was trained on tomato data
+
+species:
+  name: "Solanum lycopersicum"
+  common_name: "Tomato"
+  taxonomy:
+    family: "Solanaceae"
+    order: "Solanales"
+    class: "Magnoliopsida"
+  type: "dicot"
+  genome_size_mb: 900
+  chromosome_number: 12
+  ploidy: "diploid"
+  gc_content: 37.0
+
+genome:
+  reference: "SL4.0"
+  source: "Sol Genomics Network"
+  annotation: "ITAG4.0_genes.gff3"
+
+standard_promoters:
+  - name: "CaMV_35S"
+    type: "viral"
+    strength: "high"
+  - name: "SlUBI3"
+    gene: "Solyc01g006300"
+    type: "endogenous"
+    strength: "high"
+  - name: "SlRbcS"
+    gene: "Solyc10g006230"
+    type: "endogenous"
+    strength: "very_high"
+    tissue: "leaf"
+  - name: "E8"
+    gene: "Solyc05g054030"
+    type: "endogenous"
+    strength: "high"
+    tissue: "fruit"
+
+cis_element_weights:
+  as1_element: 5
+  GCN4_motif: 5
+  ocs_like: 3
+  TATA_box: 1
+  CAAT_box: 1
+  G_box: 2
+  W_box: 2
+  ABRE: 2
+  MBS: 1
+  DOF_site: 1
+  IME_intron: 0
+
+hard_filter:
+  require_TATA: true
+  require_CAAT: true
+  min_gc_pct: 33
+  max_gc_pct: 52
+  max_tata_boxes: 8
+  require_IME_intron: false
+
+safe_harbors:
+  known_sites: []
+  epigenome_data: "moderate"
+  notes: "Some epigenome data from TomExpress and NCBI GEO"
+
+expression:
+  agrobacterium_compatible: true
+  transformation_method: "cotyledon explant"
+  transient_expression: true
+  stable_transformation: true
+  generation_time: "3-4 months"
+
+biomanufacturing:
+  primary_use: "Fruit-specific protein production, vaccine production"
+  typical_yield_tsp: "0.5-4% TSP"
+  advantages:
+    - "Fruit bioreactor — edible vaccines"
+    - "DeepPlantCRE trained on tomato — best expression prediction"
+    - "Solanaceae family — transfers from N. benthamiana"
+  limitations:
+    - "Slower transformation than N. benthamiana"
+    - "Fruit-specific expression needs tissue-specific promoters"
